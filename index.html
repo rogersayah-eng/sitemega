@@ -1,29 +1,775 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MEGA Annual Conference 2026 · Coming soon</title>
-<meta name="robots" content="noindex">
+<title>MEGA Annual Conference 2026 · Dubai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
 <style>
-:root{--g700:#00683C;--g900:#022E1B;--lime:#82C331}
+:root{
+  --g900:#022E1B; --g800:#034B2B; --g700:#00683C; --g600:#04784A; --teal:#04836C; --lime:#82C331; --lime2:#A6CD5A;
+  --bg:#FFFFFF; --bg2:#F5F5F7; --tx:#1D1D1F; --tx2:#6E6E73; --tx3:#86868B; --line:#E5E5EA;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",sans-serif;
+  --r:28px; --ease:cubic-bezier(.2,.8,.2,1);
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"Helvetica Neue",sans-serif;color:#fff;
-background:radial-gradient(120% 90% at 85% 10%,#0A8F72 0%,transparent 55%),linear-gradient(160deg,var(--g700),var(--g900))}
-img{width:72px;height:72px;border-radius:10px;margin:0 auto 28px;display:block}
-h1{font-size:clamp(36px,7vw,72px);font-weight:800;letter-spacing:-.04em;line-height:1}
-h1 span{color:var(--lime)}
-p{margin-top:18px;font-size:18px;color:rgba(255,255,255,.78)}
-.d{margin-top:28px;font-weight:600;letter-spacing:.08em;font-size:14px;color:var(--lime)}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:var(--font);color:var(--tx);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.47;letter-spacing:-.011em;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.wide{max-width:1280px;margin:0 auto;padding:0 22px}
+
+/* type */
+.kicker{font-size:17px;font-weight:600;color:var(--g700);letter-spacing:-.01em}
+.h-xl{font-size:clamp(44px,7.2vw,88px);font-weight:700;letter-spacing:-.035em;line-height:1.02}
+.h-l{font-size:clamp(38px,5.4vw,64px);font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.h-m{font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-.022em;line-height:1.12}
+.sub{font-size:clamp(19px,2vw,24px);font-weight:500;color:var(--tx2);letter-spacing:-.016em;line-height:1.35}
+.center{text-align:center}
+.grad-text{background:linear-gradient(100deg,var(--g700) 10%,var(--teal) 50%,var(--lime) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:48px;padding:0 24px;border-radius:999px;font-size:17px;font-weight:600;transition:transform .2s var(--ease),background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-lime{background:var(--lime);color:var(--g900)}
+.btn-lime:hover{background:#8FD13B;box-shadow:0 10px 30px -10px rgba(130,195,49,.8)}
+.btn-white{background:rgba(255,255,255,.14);color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.28)}
+.btn-white:hover{background:rgba(255,255,255,.22)}
+.btn-green{background:var(--g700);color:#fff}
+.btn-green:hover{background:var(--g600)}
+.link{color:var(--g700);font-weight:500;font-size:17px}
+.link:hover{text-decoration:underline}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:52px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-color:rgba(0,0,0,.08)}
+.nav .wide{display:flex;align-items:center;height:100%;gap:28px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:#fff;transition:color .3s}
+.logo img{width:32px;height:32px;border-radius:6px}
+.nav.solid .logo{color:var(--tx)}
+.nav-links{display:flex;gap:26px;margin-left:auto;font-size:13px;color:rgba(255,255,255,.85)}
+.nav.solid .nav-links{color:var(--tx)}
+.nav-links a{opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav .btn{height:32px;padding:0 15px;font-size:13px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;min-height:100vh;background:radial-gradient(120% 90% at 85% 10%,#0A8F72 0%,transparent 55%),radial-gradient(90% 80% at 0% 100%,#023A22 0%,transparent 60%),linear-gradient(160deg,#00683C 0%,#035A35 50%,#022E1B 100%);color:#fff;overflow:hidden;display:flex;align-items:center}
+#waves{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-top:110px;padding-bottom:80px;width:100%}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 16px 5px 5px;font-size:14px;font-weight:500;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.pill b{background:var(--lime);color:var(--g900);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}
+.pill b sup{font-size:9px}
+.hero h1{margin:26px 0 22px;font-size:clamp(50px,8.6vw,112px);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.hero h1 span{color:var(--lime)}
+.hero .sub{color:rgba(255,255,255,.78);max-width:620px}
+.when{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin:40px 0}
+.dates{display:flex;align-items:center;gap:12px}
+.dbox{width:58px;height:62px;border-radius:14px;background:linear-gradient(160deg,var(--lime2),var(--lime));color:var(--g900);display:grid;place-items:center;font-size:28px;font-weight:800;letter-spacing:-.03em;box-shadow:0 10px 30px -12px rgba(130,195,49,.8)}
+.dtext b{display:block;font-size:20px;font-weight:700;letter-spacing:-.02em}
+.dtext span{font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.7);font-weight:500}
+.vsep{width:1px;height:44px;background:rgba(255,255,255,.25)}
+.where{display:flex;gap:10px;align-items:center;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.where svg{color:var(--lime)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.cd{position:absolute;right:22px;bottom:34px;display:flex;gap:6px;align-items:flex-end;font-variant-numeric:tabular-nums}
+.cd div{text-align:center;min-width:58px}
+.cd b{display:block;font-size:30px;font-weight:300;letter-spacing:-.02em;line-height:1}
+.cd small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.cd i{font-style:normal;font-size:26px;font-weight:200;color:rgba(255,255,255,.4);line-height:1.1}
+.scroll-hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:24px;height:38px;border:1.5px solid rgba(255,255,255,.45);border-radius:14px}
+.scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#fff;animation:sh 1.8s infinite}
+@keyframes sh{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* ribbon */
+.ribbon{background:var(--g900);color:#fff;font-size:14px;text-align:center;padding:12px 22px}
+.ribbon a{color:var(--lime);font-weight:600}
+
+/* sections */
+section{padding:130px 0}
+.alt{background:var(--bg2)}
+.head{max-width:780px;margin:0 auto 64px;text-align:center}
+.head .kicker{margin-bottom:12px}
+.head .sub{margin-top:18px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* MOMENTUM */
+.big75{font-size:clamp(150px,26vw,320px);font-weight:800;letter-spacing:-.06em;line-height:.85;font-variant-numeric:tabular-nums}
+.mo-top{text-align:center}
+.mo-top .sub{max-width:640px;margin:22px auto 0}
+.cyl-card{margin:70px auto 0;max-width:900px;background:var(--bg2);border-radius:var(--r);padding:48px 48px 40px}
+.cyl{display:grid;grid-template-columns:repeat(25,1fr);gap:8px 7px}
+.cyl i{display:block;aspect-ratio:1/2.2;border-radius:8px 8px 5px 5px;background:#DCDCE0;position:relative;transition:background .5s,transform .5s var(--ease)}
+.cyl i::before{content:"";position:absolute;top:-5px;left:34%;right:34%;height:6px;border-radius:3px 3px 0 0;background:inherit}
+.cyl i.og{background:var(--g800)}
+.cyl i.on{background:linear-gradient(180deg,var(--lime2),var(--lime))}
+.cyl i.nx{background:transparent;border:1.5px dashed #C7C7CC}
+.cyl i.nx::before{display:none}
+.legend{display:flex;justify-content:center;gap:28px;margin-top:30px;font-size:14px;color:var(--tx2);flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:10px;height:16px;border-radius:3px;display:inline-block}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.stat{background:#fff;border-radius:22px;padding:30px 26px}
+.stat b{display:block;font-size:48px;font-weight:700;letter-spacing:-.04em;line-height:1;margin-bottom:10px}
+.stat span{color:var(--tx2);font-size:15px;line-height:1.35;display:block}
+
+/* fee */
+.fee-wrap{margin-top:120px}
+.fee{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
+.fcard{border-radius:var(--r);padding:40px;background:#fff;position:relative;overflow:hidden}
+.fcard .lbl{font-size:15px;font-weight:600;color:var(--tx2)}
+.fcard .price{font-size:56px;font-weight:700;letter-spacing:-.04em;margin:8px 0 2px}
+.fcard .price small{font-size:18px;font-weight:500;color:var(--tx3);letter-spacing:-.01em}
+.fcard p{color:var(--tx2);font-size:16px}
+.fcard.mem{background:linear-gradient(150deg,var(--g700),var(--g900));color:#fff}
+.fcard.mem .lbl,.fcard.mem p{color:rgba(255,255,255,.75)}
+.fcard.mem .price small{color:rgba(255,255,255,.6)}
+.save{position:absolute;top:30px;right:30px;background:var(--lime);color:var(--g900);font-weight:700;font-size:14px;padding:6px 14px;border-radius:999px}
+.fee-note{text-align:center;margin-top:28px;color:var(--tx2);font-size:17px}
+
+/* HIGHLIGHTS */
+.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.hcard{border-radius:var(--r);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s}
+.hcard:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.25)}
+.hcard .art{aspect-ratio:1/1;position:relative;overflow:hidden;display:grid;place-items:center}
+.hcard .art svg.ic{width:76px;height:76px;position:relative;z-index:1}
+.hcard .body{padding:24px 26px 28px}
+.hcard .d{font-size:13px;font-weight:600;color:var(--g700);letter-spacing:.02em}
+.hcard h3{font-size:22px;font-weight:700;letter-spacing:-.022em;margin:6px 0 8px;line-height:1.15}
+.hcard p{font-size:15px;color:var(--tx2);line-height:1.4}
+.art.a1{background:radial-gradient(80% 80% at 30% 20%,#0A8F72,transparent 70%),linear-gradient(160deg,#00683C,#022E1B);color:#fff}
+.art.a2{background:radial-gradient(70% 70% at 70% 30%,#E9F5D8,transparent 70%),linear-gradient(160deg,#F4F9EC,#DDEFC4);color:var(--g800)}
+.art.a3{background:radial-gradient(80% 80% at 70% 80%,#82C331,transparent 70%),linear-gradient(200deg,#04836C,#034B2B);color:#fff}
+.art.a4{background:linear-gradient(160deg,#1D1D1F,#2C3A33);color:var(--lime)}
+.art .lines{position:absolute;inset:0;opacity:.35}
+
+/* PROGRAMME */
+.seg{display:flex;justify-content:center;margin-bottom:46px}
+.seg-in{display:inline-flex;background:#E8E8ED;border-radius:999px;padding:4px;position:relative}
+.seg button{position:relative;z-index:1;padding:10px 26px;border-radius:999px;font-size:15px;font-weight:600;color:var(--tx2);transition:color .3s}
+.seg button span{display:block;font-size:12px;font-weight:500;opacity:.8}
+.seg button.on{color:var(--tx)}
+.seg .knob{position:absolute;top:4px;bottom:4px;left:4px;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.1);transition:transform .45s var(--ease),width .45s var(--ease)}
+.day{display:none;max-width:900px;margin:0 auto}
+.day.on{display:block;animation:fade .6s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.dayhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;padding:0 6px;flex-wrap:wrap;gap:8px}
+.dayhead h3{font-size:26px;font-weight:700;letter-spacing:-.022em}
+.dayhead span{color:var(--tx2);font-size:15px}
+.slots{display:flex;flex-direction:column;gap:10px}
+.slot{display:grid;grid-template-columns:110px 1fr;gap:20px;background:#fff;border-radius:22px;padding:24px 28px;transition:box-shadow .3s}
+.slot:hover{box-shadow:0 14px 40px -24px rgba(0,0,0,.25)}
+.slot .t{font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.slot .t small{display:block;font-size:13px;font-weight:500;color:var(--tx3);margin-top:2px}
+.slot h4{font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.slot p{color:var(--tx2);font-size:16px;margin-top:6px;line-height:1.45}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;margin-bottom:10px;margin-right:4px;background:var(--bg2);color:var(--tx2)}
+.badge.g{background:#E5F2EA;color:var(--g700)}
+.badge.l{background:#EEF7E1;color:#4F7F17}
+.badge.t{background:#E1F2EF;color:var(--teal)}
+.badge.d{background:#1D1D1F;color:#fff}
+.slot.brk{background:transparent;padding:14px 28px}
+.slot.brk h4{font-size:16px;font-weight:500;color:var(--tx2)}
+.slot.brk .t{color:var(--tx3);font-size:15px}
+.slot.feat{background:linear-gradient(150deg,var(--g700),var(--g900));color:#fff}
+.slot.feat p,.slot.feat .t small{color:rgba(255,255,255,.72)}
+.slot.feat .badge{background:rgba(255,255,255,.14);color:#fff}
+.ws{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.ws div{background:rgba(255,255,255,.1);border-radius:16px;padding:16px 18px}
+.ws h5{font-size:13px;font-weight:600;color:var(--lime);margin-bottom:4px;letter-spacing:.01em}
+.ws p{margin:0;font-size:14px;color:rgba(255,255,255,.85)!important;line-height:1.4}
+.who{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.who button{display:flex;align-items:center;gap:8px;background:var(--bg2);border-radius:999px;padding:4px 14px 4px 4px;font-size:14px;font-weight:600;color:var(--tx);transition:background .2s}
+.slot.feat .who button{background:#fff;color:var(--g900)}
+.who button .mod{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--g700);background:#E5F2EA;border-radius:999px;padding:2px 8px;margin-left:2px}
+.who button:hover{background:#E8E8ED}
+.who button em{font-style:normal;color:var(--tx2);font-weight:400}
+.mini{width:28px;height:28px;border-radius:50%;overflow:hidden;flex:none;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;background:linear-gradient(150deg,var(--teal),var(--g800))}
+.mini img{width:100%;height:100%;object-fit:cover}
+.pnote{text-align:center;color:var(--tx3);font-size:13px;margin-top:30px}
+
+/* SPEAKERS */
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:44px}
+.filters button{padding:9px 18px;border-radius:999px;background:var(--bg2);font-size:14px;font-weight:500;color:var(--tx);transition:background .2s,color .2s}
+.filters button:hover{background:#E8E8ED}
+.filters button.on{background:var(--tx);color:#fff}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px;align-items:start}
+.sp{text-align:left;display:block;width:100%}
+.ph{aspect-ratio:4/5;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#E9F3E4,#D5E8CF);transition:transform .6s var(--ease)}
+.sp:hover .ph{transform:scale(1.02)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .mono{position:absolute;inset:0;display:grid;place-items:center;font-size:64px;font-weight:300;letter-spacing:-.04em;color:var(--g800)}
+.ph .waves{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.ph .co{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;color:var(--tx)}
+.sp h4{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-top:16px;line-height:1.2}
+.sp .role{font-size:15px;color:var(--tx2);margin-top:3px;line-height:1.35}
+.sp .ses{font-size:13px;color:var(--g700);font-weight:600;margin-top:8px}
+
+.sp-more{margin-top:56px}
+.sp-more h3{font-size:15px;font-weight:600;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.sp-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px;border-top:1px solid var(--line)}
+.sp-row{display:block;text-align:left;width:100%;padding:16px 0;border-bottom:1px solid var(--line)}
+.sp-row b{display:block;font-size:16px;letter-spacing:-.01em}
+.sp-row span{display:block;font-size:14px;color:var(--tx2);margin-top:2px}
+.sp-row em{display:block;font-style:normal;font-size:12px;font-weight:600;color:var(--g700);margin-top:6px}
+.sp-row:hover b{color:var(--g700)}
+@media (max-width:1000px){.sp-list{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.sp-list{grid-template-columns:1fr}}
+/* DELEGATES */
+.dtools{display:flex;gap:14px;align-items:center;max-width:900px;margin:0 auto 18px;flex-wrap:wrap}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;height:52px;padding:0 18px;box-shadow:0 0 0 1px var(--line);transition:box-shadow .2s}
+.search:focus-within{box-shadow:0 0 0 3px rgba(4,131,108,.25),0 0 0 1px var(--teal)}
+.search input{flex:1;border:0;outline:0;font:inherit;font-size:17px;background:none}
+.search svg{color:var(--tx3)}
+.live{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--tx2);font-weight:500}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(130,195,49,.2);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(130,195,49,0)}}
+.cochips{display:flex;gap:6px;max-width:900px;margin:0 auto 26px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.cochips::-webkit-scrollbar{display:none}
+.cochips button{flex:none;font-size:13px;font-weight:500;padding:7px 13px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);color:var(--tx);white-space:nowrap}
+.cochips button b{color:var(--tx3);font-weight:500;margin-left:4px}
+.cochips button.on{background:var(--g700);color:#fff;box-shadow:none}
+.cochips button.on b{color:rgba(255,255,255,.7)}
+.dlist{max-width:900px;margin:0 auto;background:#fff;border-radius:var(--r);overflow:hidden}
+.drow{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;padding:14px 24px;border-bottom:1px solid var(--line)}
+.drow:last-child{border-bottom:0}
+.drow .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:15px;font-weight:600;color:#fff}
+.drow h5{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.drow p{font-size:14px;color:var(--tx2)}
+.dots{display:flex;gap:6px}
+.dots span{font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--bg2);color:var(--tx3)}
+.dots span.y{background:#E5F2EA;color:var(--g700)}
+.drow.you{background:linear-gradient(90deg,#F4F9EC,#fff)}
+.drow.you .av{background:transparent;border:1.5px dashed var(--lime);color:var(--lime)}
+.drow.you h5{color:var(--g700)}
+.more{display:block;width:100%;padding:16px;font-size:15px;font-weight:600;color:var(--g700);border-top:1px solid var(--line)}
+.more:hover{background:var(--bg2)}
+.empty{padding:40px;text-align:center;color:var(--tx2)}
+
+/* tables */
+.tables{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:0 auto}
+.tb{background:#fff;border-radius:18px;padding:18px 18px 20px;min-height:110px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-width:0}
+.tb-logo{height:56px;display:flex;align-items:center;justify-content:center}
+.tb-logo img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.tb-mono{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:700;color:var(--g700);background:#E5F2EA}
+.tb small{font-size:12px;font-weight:600;color:var(--tx3);font-variant-numeric:tabular-nums}
+.tb b{font-size:15px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.tb.free{background:transparent;border:1.5px dashed var(--lime)}
+.tb.free b{color:var(--g700)}
+
+/* MEMBERS */
+.mcat{margin-top:44px}
+.mcat:first-of-type{margin-top:0}
+.mcat-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
+.mcat-h h3{font-size:21px;font-weight:700;letter-spacing:-.02em}
+.mcat-h span{font-size:14px;color:var(--tx3)}
+.logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.logo-t{background:#fff;border-radius:16px;box-shadow:0 0 0 1px var(--line);aspect-ratio:3/2;display:grid;place-items:center;padding:16px 18px}
+.logo-t{overflow:hidden}
+.logo-t img{width:auto;height:auto;max-width:100%;max-height:72px;object-fit:contain}
+@media (max-width:1000px){.logos{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:600px){.logos{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.logo-t{padding:10px;border-radius:12px}.logo-t img{max-height:48px}}
+
+/* VENUE */
+.venue-hero{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:21/9;min-height:360px;background:linear-gradient(180deg,#F7E7C6 0%,#F4C98E 38%,#E59A6A 62%,#7B5A6C 100%)}
+.venue-hero svg{position:absolute;inset:0;width:100%;height:100%}
+.venue-hero .cap{position:absolute;left:40px;bottom:36px;color:#fff;max-width:520px}
+.venue-hero .cap .kicker{color:var(--lime2)}
+.venue-hero .cap h3{font-size:clamp(34px,4.6vw,56px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.venue-hero .cap p{color:rgba(255,255,255,.85);font-size:18px;margin-top:10px}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.vcard{background:var(--bg2);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:6px;transition:background .2s,transform .4s var(--ease)}
+a.vcard:hover{background:#ECECF0;transform:translateY(-3px)}
+a.vcard.hl1:hover{background:linear-gradient(150deg,var(--g600),var(--g900))}
+.vcard .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#fff;color:var(--g700);margin-bottom:12px}
+.vcard h4{font-size:19px;font-weight:700;letter-spacing:-.02em}
+.vcard p{font-size:15px;color:var(--tx2)}
+.vcard .go{margin-top:auto;padding-top:14px;color:var(--g700);font-weight:600;font-size:15px}
+.vcard.hl1{background:linear-gradient(150deg,var(--g700),var(--g900));color:#fff}
+.vcard.hl1 p{color:rgba(255,255,255,.75)}
+.vcard.hl1 .ic{background:rgba(255,255,255,.14);color:var(--lime)}
+.vcard.hl1 .go{color:var(--lime)}
+.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.partner{margin-top:56px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;padding:32px 28px;border-radius:var(--r);background:var(--bg2)}
+.partner small{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:4px}
+.partner b{font-size:19px;letter-spacing:-.02em}
+.partner img{height:64px;width:auto}
+.partner .pv{width:1px;height:48px;background:var(--line)}
+@media (max-width:760px){.rooms{grid-template-columns:1fr 1fr}.partner .pv{display:none}.partner{text-align:center}}
+.room{border-radius:22px;padding:24px 28px;box-shadow:0 0 0 1px var(--line)}
+.room small{font-size:12px;font-weight:600;color:var(--g700);letter-spacing:.04em}
+.room b{display:block;font-size:19px;letter-spacing:-.02em;margin:4px 0 2px}
+.room span{color:var(--tx2);font-size:14px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.about h2{margin-top:12px}
+.about .lead{font-size:20px;line-height:1.5;color:var(--tx2);margin-top:22px}
+.pillars{display:grid;gap:12px}
+.pillar{background:var(--bg2);border-radius:22px;padding:24px 26px}
+.pillar b{display:block;font-size:17px;letter-spacing:-.015em;margin-bottom:4px}
+.pillar span{font-size:15px;color:var(--tx2);line-height:1.45}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:36px}}
+@media (max-width:760px){.dtext span{letter-spacing:.06em}.about .lead{font-size:17px}}
+.venue-card{position:relative;border-radius:var(--r);overflow:hidden;min-height:320px;display:flex;align-items:flex-end;background:#03502F url(img/backdrop.jpg) center/cover no-repeat;color:#fff}
+.venue-card .cap{padding:40px;max-width:640px}
+.venue-card .kicker{color:var(--lime2)}
+.venue-card h3{font-size:clamp(34px,4.6vw,56px);font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:8px}
+.venue-card p{color:rgba(255,255,255,.85);font-size:18px;margin-top:12px;line-height:1.45}
+
+/* FINAL */
+.final{position:relative;overflow:hidden;color:#fff;text-align:center;background:#03502F url(img/backdrop.jpg) center/cover no-repeat}
+.final canvas{position:absolute;inset:0;width:100%;height:100%}
+.final .wrap{position:relative}
+.final h2{font-size:clamp(44px,7vw,88px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.final h2 span{color:var(--lime)}
+.final .sub{color:rgba(255,255,255,.75);margin:22px auto 38px;max-width:560px}
+.final .ctas{justify-content:center}
+
+footer{background:var(--bg2);padding:34px 0 40px;font-size:12px;color:var(--tx3)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .fl{display:flex;align-items:center;gap:12px}
+footer img{width:36px;border-radius:6px}
+
+/* MODAL / SHEET */
+.sheet{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}
+.sheet.on{opacity:1;pointer-events:auto}
+.sbox{background:#fff;border-radius:30px;max-width:720px;width:100%;overflow:hidden;display:grid;grid-template-columns:280px 1fr;transform:scale(.96) translateY(10px);transition:transform .45s var(--ease);max-height:90vh}
+.sheet.on .sbox{transform:none}
+.sbox .ph{border-radius:0;aspect-ratio:auto;height:100%;min-height:340px}
+.sbox .ph .mono{font-size:96px}
+.sinfo{padding:36px 34px;overflow:auto;position:relative;max-height:90vh}
+.sbox .ph{max-height:90vh}
+.sinfo .x{position:absolute;right:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--bg2);font-size:18px;color:var(--tx2);display:grid;place-items:center}
+.sinfo h3{font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1.1;padding-right:30px}
+.sinfo .role{color:var(--tx2);font-size:16px;margin-top:6px}
+.sinfo dl{margin-top:24px}
+.sinfo dt{font-size:12px;font-weight:600;color:var(--tx3);letter-spacing:.04em;text-transform:uppercase;margin-top:18px}
+.sinfo dd{font-size:16px;margin-top:4px;line-height:1.45}
+
+/* mobile tabbar */
+.tabbar{display:none}
+@media (max-width:1000px){
+  .hl{grid-template-columns:1fr 1fr}
+  .sp-grid{grid-template-columns:repeat(3,1fr)}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  section{padding:90px 0}
+  .nav-links{display:none}
+  .nav .btn{margin-left:auto}
+  .hero .wrap{padding-top:96px}
+  .vsep{display:none}
+  .hero{flex-direction:column;align-items:stretch;justify-content:center}
+  .hero .wrap{padding-bottom:20px}
+  .cd{position:relative;left:auto;right:auto;bottom:auto;padding:0 22px 60px;justify-content:flex-start}
+  .scroll-hint{display:none}
+  .cyl-card{padding:28px 18px}
+  .cyl{grid-template-columns:repeat(14,1fr);gap:6px 4px}
+  .fee{grid-template-columns:1fr}
+  .fcard{padding:30px}
+  .hl{grid-template-columns:1fr 1fr;gap:10px}
+  .hcard .body{padding:16px 16px 20px}
+  .hcard h3{font-size:18px}
+  .hcard p{font-size:13.5px}
+  .slot{grid-template-columns:1fr;gap:6px;padding:20px}
+  .slot.brk{padding:10px 20px;grid-template-columns:auto 1fr;gap:14px}
+  .ws{grid-template-columns:1fr}
+  .sp-grid{grid-template-columns:1fr 1fr;gap:22px 12px}
+  .ph .mono{font-size:48px}
+  .sp h4{font-size:16px}
+  .sp .role{font-size:13.5px}
+  .drow{grid-template-columns:40px 1fr;padding:12px 16px}
+  .drow .av{width:40px;height:40px}
+  .drow .dots{grid-column:2}
+  .tables{grid-template-columns:1fr 1fr}
+  .venue-hero{aspect-ratio:3/4}
+  .venue-hero .cap{left:24px;right:24px;bottom:26px}
+  .vgrid,.rooms{grid-template-columns:1fr}
+  .sbox{grid-template-columns:1fr}
+  .sbox{overflow:auto}
+  .sbox .ph{min-height:0;aspect-ratio:16/11;max-height:none}
+  .sinfo{max-height:none;overflow:visible}
+  footer{padding-bottom:110px}
+  .tabbar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-radius:22px;box-shadow:0 10px 40px -10px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.05);padding:8px 4px;transform:translateY(140%);transition:transform .5s var(--ease)}
+  .tabbar.on{transform:none}
+  .tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;font-weight:600;color:var(--tx2)}
+  .tabbar svg{width:22px;height:22px}
+  .tabbar a.reg{color:var(--g700)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<main>
-<img src="img/mega-logo.png" alt="MEGA">
-<h1><span>MEGA</span> Annual Conference</h1>
-<p>Our event website is coming soon.</p>
-<div class="d">25–26 NOVEMBER 2026 · GRAND HYATT DUBAI</div>
-</main>
+
+<nav class="nav" id="nav">
+  <div class="wide">
+    <a href="#top" class="logo"><img src="img/mega-logo.png" alt="MEGA">Annual Conference 2026</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programme">Programme</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#members">Members</a>
+      <a href="#venue">Venue</a>
+    </div>
+    <a class="btn btn-lime" href="https://forms.cloud.microsoft/r/J57MYvbk9b" target="_blank" rel="noopener">Register</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="pill"><b>2<sup>nd</sup> Edition</b>Middle East Gases Association</div>
+    <h1><span>MEGA</span> Annual<br>Conference</h1>
+    <p class="sub">The annual meeting of the industrial and medical gases industry in the Middle East. Producers, suppliers and regulators meet in Dubai to advance safety and standards across the region.</p>
+    <div class="when">
+      <div class="dates"><div class="dbox">25</div><div class="dbox">26</div><div class="dtext"><b>November 2026</b><span>WEDNESDAY · THURSDAY</span></div></div>
+      <div class="vsep"></div>
+      <div class="where"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>Grand Hyatt, Dubai</div>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-lime" href="https://forms.cloud.microsoft/r/J57MYvbk9b" target="_blank" rel="noopener">Register now</a>
+      <a class="btn btn-white" href="#programme">View the programme</a>
+    </div>
+  </div>
+  <div class="cd" id="cd" aria-label="Countdown">
+    <div><b data-u="d">--</b><small>days</small></div><i>:</i>
+    <div><b data-u="h">--</b><small>hrs</small></div><i>:</i>
+    <div><b data-u="m">--</b><small>min</small></div><i>:</i>
+    <div><b data-u="s">--</b><small>sec</small></div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
+</header>
+
+<div class="ribbon">Registration is open. Seats are limited. <a href="https://forms.cloud.microsoft/r/J57MYvbk9b" target="_blank" rel="noopener">Register ›</a></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="reveal">
+      <div class="kicker">About MEGA</div>
+      <h2 class="h-l">Middle East Gases Association</h2>
+      <p class="lead">MEGA is a non-profit association of companies that produce and distribute industrial and medical gases in the Middle East, together with their equipment and service suppliers. It works with national authorities to bring regulations and safety standards in line with international practice, drawing on the technical work of EIGA and CGA.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar"><b>Safety and standards</b><span>Shared technical guidance on production, storage, transport and use of oxygen, nitrogen, argon, hydrogen, CO₂, helium and specialty gases.</span></div>
+      <div class="pillar"><b>Dialogue with authorities</b><span>A single industry voice in discussions with ministries and regulators across the region.</span></div>
+      <div class="pillar"><b>Industry network</b><span>International, regional and local producers, alongside suppliers of cylinders, cryogenic tanks, valves, compressors and logistics.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTUM -->
+<section id="momentum" class="alt">
+  <div class="wrap">
+    <div class="fee-wrap" style="margin-top:0">
+      <div class="head reveal">
+        <div class="kicker">Registration</div>
+        <h2 class="h-l">Registration fees</h2>
+      </div>
+      <div class="fee reveal">
+        <div class="fcard">
+          <div class="lbl">Non-member delegate</div>
+          <div class="price">AED 1,500 <small>+ VAT</small></div>
+          <p>Full access to the conference programme.</p>
+        </div>
+        <div class="fcard mem">
+          <span class="save">Members save AED 1,100</span>
+          <div class="lbl">Member delegate</div>
+          <div class="price">AED 400 <small>+ VAT</small></div>
+          <p>Full access to the conference programme.</p>
+        </div>
+      </div>
+      <p class="fee-note reveal">Membership enquiries: <b style="color:var(--tx)">admin@megases.org</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme" class="alt" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker">Programme</div>
+      <h2 class="h-l">Agenda</h2>
+    </div>
+    <div class="seg"><div class="seg-in" id="seg">
+      <span class="knob" id="knob"></span>
+      <button class="on" data-day="d1">Day 1<span>Wed 25 Nov</span></button>
+      <button data-day="d2">Day 2<span>Thu 26 Nov</span></button>
+    </div></div>
+
+    <div class="day on" id="d1">
+      <div class="dayhead"><h3>Governance, social event and welcome dinner</h3><span>Grand Hyatt Dubai</span></div>
+      <div class="slots">
+        <div class="slot"><div class="t">14:00<small>to 15:00</small></div><div><span class="badge g">Governance</span><span class="badge">Board members</span><h4>61st Board of Directors Meeting</h4><p>Al Khaleej Room, Grand Hyatt Dubai.</p></div></div>
+        <div class="slot"><div class="t">15:00<small>to 15:30</small></div><div><span class="badge g">Governance</span><span class="badge">All members</span><h4>17th Annual General Meeting</h4><p>Al Khaleej Room, Grand Hyatt Dubai.</p></div></div>
+        <div class="slot"><div class="t">16:00<small>to 17:30</small></div><div><span class="badge l">Social</span><span class="badge">All delegates</span><h4>Social event: AYA Universe</h4><p>Guided visit of the immersive art and technology venue at Wafi, Dubai.</p></div></div>
+        <div class="slot"><div class="t">19:00<small>onwards</small></div><div><span class="badge l">Social</span><span class="badge">All delegates</span><h4>Welcome Dinner & Networking</h4><p>Duck Garden, Grand Hyatt Dubai.</p></div></div>
+      </div>
+    </div>
+
+    <div class="day" id="d2">
+      <div class="dayhead"><h3>2nd Annual Conference</h3><span>Al Ameera Ballroom · Grand Hyatt Dubai</span></div>
+      <div class="slots" id="d2slots"></div>
+    </div>
+    <p class="pnote">Draft programme, subject to final confirmation.</p>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section id="speakers">
+  <div class="wide">
+    <div class="head reveal">
+      <div class="kicker">Line-up</div>
+      <h2 class="h-l">Speakers and panellists</h2>
+      <p class="sub">Safety, operations and technology leaders from producers and suppliers across the region.</p>
+    </div>
+    <div class="filters" id="spf"></div>
+    <div class="sp-grid" id="spg"></div>
+    <div class="sp-more" id="spm"></div>
+  </div>
+</section>
+
+<!-- DELEGATES -->
+<section id="tables-sec" class="alt">
+  <div class="wrap">
+    <div class="head reveal" style="margin-bottom:40px">
+      <div class="kicker">Day 2</div>
+      <h2 class="h-m">Networking tables</h2>
+      <p class="sub" style="font-size:19px">Meet MEGA Category 4 members at their tables throughout the day. A limited number of tables is available.</p>
+    </div>
+    <div class="tables" id="tables"></div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section id="members">
+  <div class="wide">
+    <div class="head reveal">
+      <div class="kicker">Members</div>
+      <h2 class="h-l">MEGA member companies</h2>
+      <p class="sub">Producers, distributors and the equipment and service suppliers who work with them across the region.</p>
+    </div>
+    <div id="mlogos"></div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section id="venue">
+  <div class="wide">
+    <div class="head reveal">
+      <div class="kicker">Location</div>
+      <h2 class="h-l">Venue and accommodation</h2>
+    </div>
+    <div class="venue-card reveal">
+      <div class="cap">
+        <div class="kicker">Dubai, United Arab Emirates</div>
+        <h3>Grand Hyatt Dubai</h3>
+        <p>The Board meeting, AGM, welcome dinner and conference all take place at the hotel. The social event is held at AYA Universe, Wafi, nearby.</p>
+      </div>
+    </div>
+    <div class="vgrid reveal">
+      <a class="vcard hl1" href="https://www.hyatt.com/events/en-US/group-booking/DXBGH/G-MEG6" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18V8M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></svg></div>
+        <h4>Delegate room rate</h4><p>Preferential group rate for delegates.</p><span class="go">Book your room ›</span></a>
+      <a class="vcard" href="https://maps.app.goo.gl/ZK8Tvc8E4RMo5mdN7" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h4>Getting there</h4><p>Directions to the Grand Hyatt Dubai.</p><span class="go">Open in Google Maps ›</span></a>
+      <a class="vcard" href="https://www.hyatt.com/grand-hyatt/en-US/dxbgh-grand-hyatt-dubai" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V5l8-3 8 3v16M9 21v-5h6v5M8 8h2M14 8h2M8 12h2M14 12h2"/></svg></div>
+        <h4>The hotel</h4><p>Facilities, dining and services.</p><span class="go">Visit hyatt.com ›</span></a>
+    </div>
+    <div class="rooms reveal">
+      <div class="room"><small>WED 25 NOV</small><b>Al Khaleej Room</b><span>Board 14:00 · AGM 15:00</span></div>
+      <div class="room"><small>WED 25 NOV</small><b>AYA Universe, Wafi</b><span>Social event · 16:00 to 17:30</span></div>
+      <div class="room"><small>WED 25 NOV</small><b>Duck Garden</b><span>Welcome dinner · 19:00</span></div>
+      <div class="room"><small>THU 26 NOV</small><b>Al Ameera Ballroom</b><span>Conference · registration 08:30</span></div>
+    </div>
+    <div class="partner reveal">
+      <div><small>Destination partner</small><b>Supported by Dubai Business Events</b></div>
+      <span class="pv"></span>
+      <a href="https://www.investindubai.gov.ae/en/dubai-for-events/plan-a-business-event/about-dubai-business-events" target="_blank" rel="noopener"><img src="img/dbe.png" alt="Dubai Business Events" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <canvas id="waves2" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h2>Registration <span>is open</span></h2>
+    <p class="sub">25 and 26 November 2026, Grand Hyatt Dubai.</p>
+    <div class="ctas">
+      <a class="btn btn-lime" href="https://forms.cloud.microsoft/r/J57MYvbk9b" target="_blank" rel="noopener">Register now</a>
+      <a class="btn btn-white" href="https://www.hyatt.com/events/en-US/group-booking/DXBGH/G-MEG6" target="_blank" rel="noopener">Book your room</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><img src="img/mega-logo.png" alt=""><div><b style="color:var(--tx)">Middle East Gases Association</b><br>Industrial & medical gases · Non-profit</div></div>
+    <div>Office 207, Dubai Association Centre, One Central, Dubai · +971 4 516 3030 · admin@megases.org · www.megases.org</div>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"><div class="sbox" id="sbox"></div></div>
+
+<nav class="tabbar" id="tabbar">
+  <a href="#programme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda</a>
+  <a href="#speakers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Speakers</a>
+  <a href="#venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>Venue</a>
+  <a class="reg" href="https://forms.cloud.microsoft/r/J57MYvbk9b" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Register</a>
+</nav>
+
+<script>
+const REG="https://forms.cloud.microsoft/r/J57MYvbk9b";
+/* ---------- DATA (add "p":"img/speakers/name.jpg" to show a photo) ---------- */
+const SESS={mc:"Master of Ceremonies",open:"Opening",ai:"AI Panel",geo:"Crisis Panel",talk:"Presentations",close:"Closing"};
+const SPK=[
+ {n:"Ahmed Al Sayes",r:"MEGA Chairman · General Manager, Gases Division",c:"AHG",s:"open",t:"Opening Remarks by the MEGA Chairman",p:"img/speakers/sayes.jpg",bio:"A senior industry leader with more than 31 years in the gas sector, with deep expertise in strategic leadership, corporate governance, business growth and operational excellence. A Chemical Engineering graduate of California State University, Long Beach (1994), he pairs a strong technical foundation with decades of executive leadership, and is known for advancing sustainable growth, fostering innovation and building high-performing organisations."},
+ {n:"Joanne Rusafova",r:"Group Head of Technology",c:"Gulf Cryo",s:"ai",t:"AI in Industrial Gases: From Safety to Operational Excellence",p:"img/speakers/joanne.jpg",bio:"Joanne Rusafova is Group Head of Technology at Gulf Cryo, where she leads group-wide technology unification and the company’s AI strategy. A transformation leader with more than 25 years of experience across the UK, Europe, the US and the Middle East, she has delivered major programmes in manufacturing, publishing, banking, shipping and retail."},
+ {n:"Anna Spektor",r:"Head of Oil & Gas, Middle East",c:"Linde",s:"ai",t:"The practical adoption of AI to improve operational performance and commercial decision-making",p:"img/speakers/anna.jpg",bio:"An international business leader with nearly two decades in the energy and industrial gases sectors. At Linde she leads business strategy, growth and customer engagement across the Middle East and Eastern Europe, focused on operational excellence, strategic partnerships and the commercial deployment of advanced gas technologies. Since joining Linde in 2011 she has held leadership roles in Russia, China and the Middle East, combining a strong engineering foundation with broad commercial experience.",m:1},
+ {n:"Fahad Al Ansari",r:"MEGA Vice Chairman · CEO",c:"GASAL",s:"close",t:"Closing Remarks",p:"img/speakers/fahad.jpg",bio:"Fahad Ali Al Ansari joined GASAL as Chief Executive Officer in 2023, bringing more than three decades of expertise in Qatar’s energy sector across technical, commercial, marketing and executive roles. He previously held senior positions at QatarEnergy, RasGas and the Ministry of Electricity and Water, leading major capital projects while embedding quality, health, safety and environmental standards. He has served on the boards of leading petrochemical, industrial and energy organisations, holds a BSc in Civil Engineering and completed executive programmes at Harvard and INSEAD."},
+ {n:"Ali Alzuwayyid",r:"QHSSE & IMS Director, KSA",c:"Air Liquide",s:"talk",t:"Beyond Compliance: The Human & Organisational Factors Behind a Strong Safety Culture",p:"img/speakers/ali.jpg",bio:"Ali Alzuwayyid leads HSSE, IMS and Risk Management at Air Liquide KSA, with more than 14 years in the industrial gases industry across operations, procurement and commercial roles. He has led major transformation initiatives that improved safety, efficiency and compliance at multiple sites in Saudi Arabia. Ali holds an MBA and professional certifications including PMP, CIPM, CIPP, NEBOSH and Six Sigma, and is passionate about leadership, safety culture and operational excellence in the Middle East’s industrial gases sector."},
+ {n:"Annette Golles",r:"Director, Quality & Regulatory Affairs, EMEA",c:"Linde",s:"talk",t:"From Industrial Excellence to Pharmaceutical Quality: Building a Sustainable GMP System for Medical Gases",p:"img/speakers/annette.jpg",bio:"Annette Golles is Director, Quality & Regulatory Affairs, EMEA at Linde and Chair of the EIGA Medical Gas Council. With a background in pharmacy and a career dedicated to the pharmaceutical and medical gases industry, she is passionate about making quality and regulatory compliance work in practice. Her focus is on combining compliance, efficiency and people to support the safe and reliable manufacture and distribution of medical products."},
+ {n:"Najwa Nooman",r:"Specialty Gases Sales Executive",c:"Buzwair",s:"talk",t:"Specialty Gases",p:"img/speakers/najwa.jpg",bio:"Eng. Najwa Nooman is a Chemical Engineer with five years in the specialty gases industry: four in Quality Management and one in Specialty Gases Sales. She combines strong technical expertise with commercial insight in business development, customer relationships and tailored gas solutions, backed by experience in quality assurance and international standards. She holds a BSc in Chemical Engineering from the University of Balamand, Lebanon."},
+ {n:"Ahmad Harb",r:"VP Supply Chain",c:"Gulf Cryo",s:"geo",t:"Geopolitical Crisis Management: Protecting People, Assets & Supply",p:"img/speakers/harb.jpg",bio:"Ahmad Harb is Chief Supply Chain Officer and South Cluster Business Director at Gulf Cryo. He has nearly 20 years of experience across the GCC in supply chain, continuous improvement, project management and general management. Before Gulf Cryo, he held consulting and risk management roles with leading firms in the region. Ahmad holds a BBA in Finance from the American University of Beirut and is a certified Six Sigma Black Belt."},
+ {n:"Amer Alamer",r:"Head of SHEQ, Middle East",c:"Linde",s:"geo",t:"Geopolitical Crisis Management: Protecting People, Assets & Supply",p:"img/speakers/amer.jpg",bio:"Amer Alamer is Head of SHEQ (Safety, Health, Environment and Quality) for Linde’s Middle East cluster. An industrial engineer with 20 years in SHEQ, he has worked across manufacturing, oil and gas, water and utilities, and gas production and filling. His experience spans occupational safety and health, quality management and ISO systems, process safety management with PHA and HAZOP, environmental management and local regulation, including the Royal Commission for Jubail standards in Saudi Arabia, as well as emergency preparedness and firefighting systems."},
+ {n:"Elias Nasr",r:"Chief Operating Officer",c:"GASAL",s:"geo",t:"Geopolitical Crisis Management: Protecting People, Assets & Supply",p:"img/speakers/elias.jpg",bio:"Elias Nasr is Chief Operating Officer of GASAL, with more than 20 years of experience in industrial operations, process control and smart manufacturing. Before GASAL he held senior roles at Air Liquide, including leadership of the AMEI Smart Innovative Operations Center, overseeing remote operations, the LEAD diagnostics centre and smart manufacturing strategy. He holds a Master’s in Industrial Control Engineering, completed executive training at INSEAD, and was recognised by Air Liquide as an Expert Technical Community Leader in Smart Manufacturing."},
+ {n:"Darren Hodgson",r:"Regional Manager, Resilience, Crisis Management & Security",c:"Air Products",s:"geo",t:"Personnel Protection, Shelter-in-Place, Emergency & Crisis Management",p:"img/speakers/darren.jpg",bio:"Darren leads asset protection, investigations, crisis management, emergency preparedness, business resilience and personnel protection for Air Products across the Middle East, Africa and Central Asia. With more than three decades spanning military service, energy and industry, he previously served as Regional Security Director for Baker Hughes and held security leadership roles in Iraq and Libya with Weatherford, after 24 years in the British Army. A Chartered Security Professional, he holds an MSc in Risk and Security Management from Loughborough University and is a graduate of Oxford Saïd’s Executive Leadership Programme."},
+ {n:"Fouad Haddad",r:"CEO",c:"SOAL",s:"geo",t:"Panel moderator",m:1,p:"img/speakers/fouad-2.jpg",bio:"Fouad G. Haddad is CEO of SOAL (Société d’Oxygène et d’Acétylène du Liban), an industrial and medical gases company that is also active in homecare services for patients. He brings more than four decades of international experience across industrial gases, healthcare and engineering, most of it with Air Liquide, where he was Chairman of the Levant Cluster, Regional Director for Industrial Merchant & Healthcare and Managing Director for the Middle East and North Africa, and General Manager of Air Liquide Lebanon, after earlier leadership roles in France, Turkey and Africa. He holds an MSc in Electrical Engineering from Saint Joseph University (ESIB) in Lebanon and completed an executive development programme at Nanyang Technological University, Singapore."},
+ {n:"Muhammad Aamir",r:"Group Head of QHSE",c:"Gulf Cryo",s:"talk",t:"Food Safety: From Source to Customer",p:"img/speakers/aamir.jpg",bio:"Muhammad Aamir is Group Head of QHSE and Transport Safety at Gulf Cryo, leading group-wide safety, quality and compliance standards. He brings more than 20 years of international experience across Asia and the Middle East, including leadership roles at Shell and Linde. At Gulf Cryo he has advanced hydrogen transport safety protocols, set up a Transport Operation Center and strengthened safety leadership and accountability across operations. He holds a Master’s in Supply Chain Management from MIT’s Global SCALE Network and is a Fellow of the Chartered Institute of Logistics and Transport (CILT UK)."},
+ {n:"Ramon Castella",r:"Traded Chemicals & Acetylene Technical Manager",c:"Air Products",s:"talk",t:"Acetylene Safety: Lessons Learned and Practical Risk Prevention",p:"img/speakers/ramon.jpg",bio:"Ramon Castella has spent 37 years with Air Products in a range of technical and operations roles, and today supports acetylene operations worldwide as Acetylene Technical Manager. He is a member of the EIGA WG-12 (Acetylene) working group and the CGA Acetylene Committee. He holds an Industrial Technical Engineering degree from the Polytechnic University of Catalonia and an MBA from Tarragona University, Spain."},
+ {n:"Roxana Saade",r:"Chief AI Officer",c:"SOAL",s:"mc",t:"Welcome by the Master of Ceremonies",p:"img/speakers/roxana.jpg",bio:"Roxana Y. Saade is the Chief AI Officer at SOAL, where she leads AI integration, compliance and workforce upskilling. A chemical engineer and ISO 9001 Lead Auditor, she brings more than a decade of experience in operations, QHSE and ERP implementation across industrial gases and healthcare."},
+ {n:"Ronald Chripson",r:"Regional Distribution Manager",c:"Air Products",s:"ai",t:"AI for Driver and Transport Safety",p:"img/speakers/ronald.jpg",bio:"Ronald leads distribution operations across the UAE, Oman and Qatar, driving safe, reliable and compliant operations while advancing service excellence, cost optimisation and business continuity. He leads regional initiatives across packaged and bulk gas distribution, fleet utilisation, cross-border logistics and import/export, with a focus on demand-led fleet deployment and sustainable logistics. A people-focused leader, he builds a culture of ownership, accountability and continuous improvement."},
+ {n:"Shivani Sivakumar",r:"Robotics Software Engineer",c:"Bear Robotics",s:"ai",t:"Robotics in Industrial Gases: From Traditional Automation to Physical AI",p:"img/speakers/shivani.jpg",bio:"Shivani is a Robotics Software Engineer at Bear Robotics, a Silicon Valley company building intelligent autonomous robots for hospitality, logistics and industry. She holds an MSc in Robotic Systems Development from Carnegie Mellon University. Her work spans perception, motion planning, control and AI-driven autonomy, with hands-on deployments in autonomous construction, warehousing and service robotics. She is passionate about field robotics and Physical AI, and in building reliable, safe autonomous systems that work seamlessly alongside people."},
+ {n:"Ahmed Salem Hamdy",r:"QHSE, IMS & Industrial Risk Manager",c:"AHG",s:"talk",t:"Safety Culture",p:"img/speakers/hamdy.jpg",bio:"Ahmed Hamdy is a QHSE leader with an engineering background and an MBA, and 19 years in the industrial and medical gases sector across Egypt and Saudi Arabia. His expertise covers process risk assessment for new and existing facilities, gas production and filling, cryogenic systems, cylinder safety, hazardous materials, transport safety, fire protection and integrated management systems. As Leader of the MEGA Safety Workgroup (SAG), he supports regional collaboration on safety best practice, including proposed regulatory requirements for industrial and medical gas facilities in Saudi Arabia and a roadmap for wider cylinder governance."},
+ {n:"Roger Sayah",r:"General Secretary",c:"MEGA",s:"open",t:"MEGA Updates and Association Highlights",p:"img/speakers/roger.jpg",bio:"Roger Sayah is an Electrical Engineering graduate of Université Saint-Joseph in Beirut, with more than 20 years in the industrial gases industry. He has held senior technical, operational and management roles with Air Liquide and Gulf Cryo across the Middle East and Europe, building deep expertise in industrial gas operations and regional business development. Since 2019 he has served as General Secretary of the Middle East Gases Association (MEGA), leading initiatives to advance safety, strengthen industry standards, support regulatory development and foster collaboration between industry and government authorities across the region."}
+];
+const DEL=[["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["Air Liquide"],["Air Liquide"],["Air Liquide Global Helium"],["Air Liquide Global Helium"],["Air Liquide Global Helium"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["AIT Events"],["AIT Events"],["Al Muftah International"],["Al Saeed Gas"],["Al-Mahia Transport"],["Alcan International"],["Alcan International"],["Alfa Laval"],["Baker Hughes"],["Bauer Kompressoren GCC"],["Bauer Kompressoren GCC"],["Bear Robotics"],["Bristol Gases"],["Bristol Gases"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Buzwair"],["Buzwair"],["Buzwair"],["Buzwair"],["Chart Industries"],["CIMC"],["CIMC"],["Concorde-Corodex Group"],["Concorde-Corodex Group"],["Cryo Gastech India"],["Cryocan"],["CryoSpec"],["Dosteen Engineering Solutions"],["ESSME Essential Systems & Services"],["ESSME Essential Systems & Services"],["Eurotainer"],["Eurotainer"],["Eurotainer"],["Fike Corporation"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["Global Gas Services"],["Global Gas Services"],["Global Gases Group"],["Global Surf Digital"],["Glotech Trading"],["Greenox Gases & Chemicals"],["Greenox Gases & Chemicals"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Helium Services"],["iGas Al Khobar"],["iGAS Technology Solutions"],["iGAS Technology Solutions"],["IGPH"],["IGPH"],["INOX India"],["International Trademark Association"],["Jacko Gases"],["Jacko Gases"],["Jalon (Thailand)"],["Jiangsu Xinde Intelligent Fluid Technology"],["Jiangsu Xinde Intelligent Fluid Technology"],["Jiangsu Xinde Intelligent Fluid Technology"],["Jiangsu Xinde Intelligent Fluid Technology"],["King Faisal Specialist Hospital & Research Centre"],["Linde"],["Linde"],["Linde"],["Linde"],["Linde"],["Linde"],["Linde"],["Luxfer Gas Cylinders (Cantrex)"],["Luxfer Gas Cylinders (Cantrex)"],["MEGA"],["MEGA"],["Ministry of Industry and Advanced Technology"],["Misfer Fahad Al Qahtani Contracting"],["Mysore Ammonia Envirotech"],["Mysore Ammonia Envirotech"],["Opsys"],["Prasanvi General Contracting"],["Prasanvi General Contracting"],["Prasanvi General Contracting"],["Prasanvi General Contracting"],["Rawabi Integrated Gas"],["Rawabi Integrated Gas"],["Rawabi Integrated Gas"],["Saih Al Rawl Gas"],["Saih Al Rawl Gas"],["Sichuan Air Separation Plant"],["Sichuan Air Separation Plant"],["Sichuan Zhijing Taibo Cryogenic Equipment"],["SinoCleansky"],["SOAL"],["SOAL"],["SOAL"],["Speciality Gas Company"],["Tekno Valves"],["Tekno Valves"],["Transafe Logistics"],["Transafe Logistics"],["Turbo-Tech Compressor Wuxi"]];
+const TABLES=[["Al Mahia Transport","c4_almahia"],["Al Muftah International","c4_almuftah"],["Alcan International","c4_alcan"],["Alfa Laval Cherland (Fives Cryomec)","c4_alfalaval"],["Bauer Kompressoren GCC","c4_bauer"],["Cavagna Group","c4_cavagna"],["Chart Industries","c4_chart"],["CIGMA & AIT Events","c4_igchina"],["CIMC Enric","c4_cimc"],["Cryocan Basınçlı","c4_cryocan"],["EKC International","c4_ekc"],["Essential Systems & Services Middle East","c4_ess"],["Eurotainer","c4_eurotainer"],["Industrial Gas Projects House (IGPH)","c4_igph"],["INOX India","c4_inoxcva"],["Jiangsu Xinde Intelligent Fluid Technology","c4_xinde"],["Khalid Habalis Al-Otaibi Transportation","c4_khalidhabalis"],["Luxfer Gas Cylinders (Cantrex)","c4_luxfer"],["Misfer Group","c4_misfer"],["Mysore Ammonia Envirotech","c4_mysore"],["Prasanvi General Contracting","c4_prasanvi"],["Sichuan Air Separation Plant","c4_saspg"],["Tekno Valves North America","c4_tekno"],["Transafe Logistics","c4_transafe"],["Turbo-Tech Compressor Wuxi","c4_turbotech"]];
+const D2=[
+ {t:"08:30",e:"to 09:00",k:"brk",h:"Delegate registration & badge collection"},
+ {t:"09:00",e:"to 09:05",b:["g", "Welcome"],h:"Welcome by the Master of Ceremonies",p:"Welcome and housekeeping.",sp:["Roxana Saade"]},
+ {t:"09:05",e:"to 09:15",b:["g", "Opening"],h:"Opening Remarks",p:"Address by the MEGA Chairman.",sp:["Ahmed Al Sayes"]},
+ {t:"09:15",e:"to 09:30",b:["g", "Plenary"],h:"MEGA Updates and Association Highlights",p:"By the MEGA General Secretary.",sp:["Roger Sayah"]},
+ {t:"09:30",e:"to 10:30",k:"feat",b:["", "Panel 1"],h:"AI in Industrial Gases: From Safety to Operational Excellence",p:"Driver and transport safety, predictive maintenance, robotics and physical AI, and keeping people at the centre of safety-critical decisions. A partner expert from Air Products completes the panel.",sp:["Anna Spektor", "Ronald Chripson", "Joanne Rusafova", "Shivani Sivakumar"]},
+ {t:"10:30",e:"to 10:45",k:"brk",h:"Networking & coffee break"},
+ {t:"10:45",e:"to 11:15",b:["l", "Presentation"],h:"From Industrial Excellence to Pharmaceutical Quality",p:"Building a sustainable GMP system for medical gases.",sp:["Annette Golles"]},
+ {t:"11:15",e:"to 11:45",b:["l", "Presentation"],h:"Safety Culture",sp:["Ahmed Salem Hamdy"]},
+ {t:"11:45",e:"to 12:15",b:["l", "Presentation"],h:"Food Safety: From Source to Customer",sp:["Muhammad Aamir"]},
+ {t:"12:15",e:"to 13:15",k:"brk",h:"Lunch & networking"},
+ {t:"13:15",e:"to 14:15",k:"feat",b:["", "Panel 2"],h:"Geopolitical Crisis Management: Protecting People, Assets & Supply",p:"Personnel protection and shelter-in-place, crisis response, critical cryogenic assets, GCC supply continuity and regional cooperation.",sp:["Fouad Haddad", "Elias Nasr", "Darren Hodgson", "Amer Alamer", "Ahmad Harb"]},
+ {t:"14:15",e:"to 14:45",b:["l", "Presentation"],h:"Beyond Compliance: The Human & Organisational Factors Behind a Strong Safety Culture",sp:["Ali Alzuwayyid"]},
+ {t:"14:45",e:"to 15:00",k:"brk",h:"Networking & coffee break"},
+ {t:"15:00",e:"to 15:30",b:["l", "Presentation"],h:"Specialty Gases",sp:["Najwa Nooman"]},
+ {t:"15:30",e:"to 16:00",b:["l", "Presentation"],h:"Acetylene Safety: Lessons Learned and Practical Risk Prevention",p:"Key hazards, incident learnings, filling and storage best practice, and emergency response.",sp:["Ramon Castella"]},
+ {t:"16:00",e:"to 16:15",b:["g", "Closing"],h:"Closing Remarks",p:"By the MEGA Vice Chairman.",sp:["Fahad Al Ansari"]},
+ {t:"16:15",e:"to 16:30",b:["d", "Ceremony"],h:"MEGA Awards & Group Photo",p:"Recognising the members and people who moved safety forward this year, followed by the group photo."},
+ {t:"16:30",e:"to 18:00",b:["l", "Networking"],h:"Networking Tables",p:"Meet MEGA Category 4 members at the networking tables."},
+ {t:"20:00",e:"onwards",b:["l", "Social"],h:"Dinner & Networking (optional)",p:"Venue and arrangements to be confirmed."}
+];
+
+const MEM=[["Category 1 & 2", [["c12_ahg", "Abdullah Hashim Industrial Gases (AHG)"], ["c12_airliquide", "Air Liquide Middle East & North Africa"], ["c12_airproducts", "Air Products Middle East"], ["c12_alaalamiya", "Al-Aalamiya"], ["c12_brothers", "Brothers Gas"], ["c12_buzwair", "Buzwair Industrial Gases"], ["c12_gasal", "GASAL"], ["c12_gulfcryo", "Gulf Cryo"], ["c12_linde", "Linde Gas Middle East"], ["c12_prime", "Prime Co"], ["c12_rawabi", "Rawabi Integrated Gas"], ["c12_sabic", "SABIC"], ["c12_soal", "SOAL"], ["c12_technogas", "Techno Gas"]]], ["Category 3", [["c3_alglobalhelium", "Air Liquide Global Helium"], ["c3_alqassim", "Al Qassim Oxygen Company"], ["c3_alsaeed", "Al-Saeed Gases"], ["c3_arabiagas", "Arabia Gas"], ["c3_bristol", "Bristol Gases"], ["c3_cryospec", "CryoSpec"], ["c3_digas", "DIGAS"], ["c3_gazbihooshi", "Gaz Bihooshi Shomal"], ["c3_globalgas", "Global Gas Services"], ["c3_glotech", "Glo-Tech Trading"], ["c3_greenox", "Greenox Gases"], ["c3_gulfhelium", "Gulf Helium Services"], ["c3_igas", "iGas Al Khobar"], ["c3_jacko", "Jacko Gases"], ["c3_kocerler", "Koçerler Group"], ["c3_manav", "Manav Gases"], ["c3_nuras", "Nuras Al-Sharq"], ["c3_roham", "Roham Industrial Gases"], ["c3_saihalrawl", "Saih Al-Rawl Gas"], ["c3_specialty", "Specialty Gases Co."], ["c4_sohar", "Sohar Gases"], ["c3_snr", "Syrian Natural Resources"], ["c3_wosta", "Wosta Gases"]]], ["Category 4", [["c4_almahia", "Al Mahia Transport"], ["c4_almuftah", "Al Muftah International"], ["c4_alcan", "Al-Can International"], ["c4_alfalaval", "Alfa Laval"], ["c4_bauer", "BAUER Kompressoren GCC"], ["c4_brightway", "Brightway Cryogenic"], ["c4_cavagna", "Cavagna Group"], ["c4_chart", "Chart Industries"], ["c4_cimc", "CIMC Enric"], ["c4_cryocan", "Cryocan"], ["c4_cryostar", "Cryostar"], ["c4_dalian", "Dalian Specialty Gases"], ["c4_doer", "DOER Cryo Equipment"], ["c4_ekc", "EKC International"], ["c4_ess", "Essential Systems & Services"], ["c4_eurotainer", "Eurotainer"], ["c4_gasecosphere", "Gas Ecosphere"], ["c4_gasmax", "GasMax Energy"], ["c4_igchina", "IG China (CIGMA & AIT Events)"], ["c4_igph", "Industrial Gas Projects House (IGPH)"], ["c4_inoxcva", "INOXCVA"], ["c4_khalidhabalis", "Khalid Habalis Al-Otaibi for Transportation"], ["c4_lifeguard", "LifeGuard Technologies"], ["c4_luxfer", "Luxfer Gas Cylinders"], ["c4_misfer", "Misfer Group"], ["c4_mysore", "Mysore Ammonia"], ["c4_nac", "NAC"], ["c4_netcylinders", "NET Cylinders"], ["c4_prasanvi", "Prasanvi"], ["c4_rexarc", "Rexarc"], ["c4_saspg", "SASPG"], ["c4_tekno", "Tekno Valves"], ["c4_thinkto", "Think-To"], ["c4_transafe", "Transafe"], ["c4_turbotech", "Turbo-Tech"], ["c4_unieco", "UniEco"], ["c4_xinde", "XINDE"]]]];
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ini=n=>{const p=n.trim().split(/\s+/);return (p[0][0]+(p.length>1?p[p.length-1][0]:"")).toUpperCase()};
+const spIdx=Object.fromEntries(SPK.map((s,i)=>[s.n,i]));
+function wavePaths(w,h,n,amp,seed){let d="";for(let i=0;i<n;i++){const o=i/n;let p=`M0 ${h*(.2+o*.7)}`;for(let x=0;x<=w;x+=w/24){const y=h*(.2+o*.7)+Math.sin(x/w*Math.PI*2*1.2+seed+o*2.4)*amp*(1-o*.4)+Math.cos(x/w*Math.PI*3+o*5)*amp*.3;p+=` L${x.toFixed(1)} ${y.toFixed(1)}`}d+=`<path d="${p}"/>`}return d}
+["lp1","lp3"].forEach((id,k)=>{const g=document.getElementById(id);if(g)g.innerHTML=wavePaths(200,200,26,26,k*2)});
+
+/* nav + tabbar */
+const nav=$("#nav"),tb=$("#tabbar");
+function onScroll(){const y=scrollY;nav.classList.toggle("solid",y>innerHeight*.75);tb.classList.toggle("on",y>innerHeight*.6)}
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+/* hero waves canvas (like the flyer's line ribbons, but alive) */
+function waves(cv,opt){const ctx=cv.getContext("2d");let w,h,dpr;const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ function rs(){dpr=Math.min(2,devicePixelRatio||1);w=cv.clientWidth;h=cv.clientHeight;cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+ rs();addEventListener("resize",rs);
+ function draw(t){ctx.clearRect(0,0,w,h);const N=opt.n;
+  for(let i=0;i<N;i++){const o=i/N;ctx.beginPath();
+   for(let s=0;s<=60;s++){const u=s/60;
+    const x=w*(opt.x0+u*(opt.x1-opt.x0))+Math.sin(u*Math.PI*1.6+t*.00025+o*3)*w*.06*opt.bend;
+    const y=h*(1.05-u*1.15)+Math.sin(u*Math.PI*2+o*2.2+t*.0003)*h*.05+(o-.5)*h*opt.spread*Math.sin(u*Math.PI);
+    s?ctx.lineTo(x,y):ctx.moveTo(x,y)}
+   ctx.strokeStyle=`rgba(${opt.c},${opt.a*(.35+.65*Math.sin(o*Math.PI))})`;ctx.lineWidth=.8;ctx.stroke()}
+  if(!still)requestAnimationFrame(draw)}
+ requestAnimationFrame(draw)}
+const sm=innerWidth<760;waves($("#waves"),sm?{n:50,x0:.78,x1:1.15,bend:1,spread:.4,c:"220,255,235",a:.3}:{n:70,x0:.55,x1:.95,bend:1.4,spread:.5,c:"220,255,235",a:.55});
+waves($("#waves2"),{n:50,x0:.05,x1:.95,bend:1,spread:.35,c:"190,240,150",a:.35});
+
+/* countdown */
+const T0=Date.parse("2026-11-25T09:00:00+04:00");
+function tick(){const d=Math.max(0,T0-Date.now())/1000,v={d:Math.floor(d/86400),h:Math.floor(d%86400/3600),m:Math.floor(d%3600/60),s:Math.floor(d%60)};
+ document.querySelectorAll("#cd b").forEach(b=>b.textContent=String(v[b.dataset.u]).padStart(2,"0"))}
+tick();setInterval(tick,1000);
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* momentum */
+const NCO=new Set(DEL.map(d=>d[0])).size;
+const cyl=$("#cyl");if(cyl){for(let i=0;i<NCO;i++)cyl.appendChild(document.createElement("i"));
+let played=false;
+function countUp(el,from,to,dur,cb){const s=performance.now();(function f(n){const p=Math.min(1,(n-s)/dur),e=1-Math.pow(1-p,3),v=Math.round(from+(to-from)*e);el.textContent=v;cb&&cb(v);if(p<1)requestAnimationFrame(f)})(s)}
+new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting&&!played){played=true;o.disconnect();
+ const cs=[...cyl.children];
+ countUp($("#n75"),0,NCO,2600,v=>cs.forEach((c,i)=>c.classList.toggle("on",i<v)))}})},{threshold:.35}).observe($("#momentum"));}
+
+/* segmented control */
+const seg=$("#seg"),knob=$("#knob");
+function setDay(id){[...seg.querySelectorAll("button")].forEach(b=>{const on=b.dataset.day===id;b.classList.toggle("on",on);if(on){knob.style.width=b.offsetWidth+"px";knob.style.transform=`translateX(${b.offsetLeft-4}px)`}});
+ document.querySelectorAll(".day").forEach(d=>d.classList.toggle("on",d.id===id))}
+seg.onclick=e=>{const b=e.target.closest("button");if(b)setDay(b.dataset.day)};
+document.querySelectorAll(".hcard[data-day]").forEach(c=>c.addEventListener("click",()=>setDay(c.dataset.day)));
+addEventListener("load",()=>setDay(seg.querySelector(".on").dataset.day));addEventListener("resize",()=>setDay(seg.querySelector(".on").dataset.day));
+
+/* avatar */
+const av=(s,cls)=>s.p?`<img src="${esc(s.p)}" alt="" loading="lazy">`:"";
+const who=n=>{const i=spIdx[n],s=SPK[i];return `<button data-sp="${i}"><span class="mini">${s.p?av(s):ini(n)}</span>${esc(n)} <em>${esc(s.c)}</em>${s.m?`<i class="mod">Moderator</i>`:""}</button>`};
+
+$("#d2slots").innerHTML=D2.map(x=>`<div class="slot ${x.k||""}"><div class="t">${x.t}${x.e?`<small>${x.e}</small>`:""}</div><div>${x.b?`<span class="badge ${x.b[0]}">${x.b[1]}</span>`:""}<h4>${esc(x.h)}</h4>${x.p?`<p>${esc(x.p)}</p>`:""}${x.sp?`<div class="who">${x.sp.map(who).join("")}</div>`:""}</div></div>`).join("");
+
+/* speakers */
+const phWaves=`<svg class="waves" viewBox="0 0 200 250" preserveAspectRatio="none"><g fill="none" stroke="#fff" stroke-width=".7">${wavePaths(200,250,18,30,1)}</g></svg>`;
+function photo(s){return `<div class="ph">${s.p?`<img src="${esc(s.p)}" alt="${esc(s.n)}" loading="lazy">`:`${phWaves}<div class="mono">${ini(s.n)}</div>`}<span class="co">${esc(s.c)}</span></div>`}
+let spF="all";
+function renderSp(){
+ $("#spf").innerHTML=[["all","All"],...Object.entries(SESS)].map(([k,l])=>`<button class="${spF===k?"on":""}" data-f="${k}">${l}</button>`).join("");
+ const L=SPK.map((s,i)=>({s,i})).filter(o=>spF==="all"||o.s.s===spF);
+ $("#spg").innerHTML=L.filter(o=>o.s.p).map(({s,i})=>`<button class="sp" data-sp="${i}">${photo(s)}<h4>${esc(s.n)}</h4><div class="role">${esc(s.r||s.c)}</div><div class="ses">${s.s==="talk"?esc(s.t):SESS[s.s]}${s.m?" · Moderator":""}</div></button>`).join("");
+ const R=L.filter(o=>!o.s.p);
+ $("#spm").innerHTML=R.length?`<h3>${L.some(o=>o.s.p)?"Also speaking":"Speakers"}</h3><div class="sp-list">${R.map(({s,i})=>`<button class="sp-row" data-sp="${i}"><b>${esc(s.n)}</b><span>${esc([s.r,s.c].filter(Boolean).join(", "))}</span><em>${s.s==="talk"?esc(s.t):SESS[s.s]}${s.m?" · Moderator":""}</em></button>`).join("")}</div>`:""}
+renderSp();
+$("#spf").onclick=e=>{const b=e.target.closest("button");if(b){spF=b.dataset.f;renderSp()}};
+
+/* sheet */
+const SLOT={};D2.forEach(x=>(x.sp||[]).forEach(n=>SLOT[n]=x.t+"–"+x.e.replace("to ","")));
+function openSp(i){const s=SPK[i];
+ $("#sbox").innerHTML=`${photo(s)}<div class="sinfo"><button class="x" aria-label="Close">×</button><h3>${esc(s.n)}</h3><div class="role">${esc([s.r,s.c].filter(Boolean).join(" · "))}</div>
+ <dl><dt>Session</dt><dd>${SESS[s.s]}${s.m?" (Moderator)":""} · ${s.s==="ws"?"Wed 25 Nov":"Thu 26 Nov"}${SLOT[s.n]?" · "+SLOT[s.n]:""}</dd><dt>Talk</dt><dd>${esc(s.t)}</dd><dt>About</dt><dd style="color:var(--tx2)">${s.bio?esc(s.bio):"Biography coming soon."}</dd></dl></div>`;
+ $("#sheet").classList.add("on")}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-sp]");if(b){openSp(+b.dataset.sp);return}
+ if(e.target.id==="sheet"||e.target.closest(".x"))$("#sheet").classList.remove("on")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#sheet").classList.remove("on")});
+
+/* members */
+$("#mlogos").innerHTML=MEM.map(([cat,L])=>`<div class="mcat reveal"><div class="mcat-h"><h3>${esc(cat)}</h3><span>${L.length} companies</span></div><div class="logos">${L.map(([f,n])=>`<div class="logo-t" title="${esc(n)}"><img src="img/members/${f}.png" alt="${esc(n)}" loading="lazy"></div>`).join("")}</div></div>`).join("");
+document.querySelectorAll("#mlogos .reveal").forEach(el=>io.observe(el));
+
+/* tables */
+$("#tables").innerHTML=TABLES.map(([t,f],i)=>`<div class="tb"><small>Table ${String(i+1).padStart(2,"0")}</small><div class="tb-logo">${f?`<img src="img/members/${f}.png" alt="${esc(t)}" loading="lazy">`:`<span class="tb-mono">${ini(t)}</span>`}</div><b>${esc(t)}</b></div>`).join("")+`<a class="tb free" href="mailto:admin@megases.org"><small>Table ${TABLES.length+1}</small><b>Table enquiries: admin@megases.org</b></a>`;
+</script>
 </body>
 </html>
+
+</body></html>
