@@ -163,6 +163,8 @@ section{padding:130px 0}
 .dayhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;padding:0 6px;flex-wrap:wrap;gap:8px}
 .dayhead h3{font-size:26px;font-weight:700;letter-spacing:-.022em}
 .dayhead span{color:var(--tx2);font-size:15px}
+.invite{margin:-6px 6px 18px;padding:12px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:15px;color:var(--tx2)}
+.invite::before{content:"By invitation only";display:inline-block;margin-right:10px;padding:2px 10px;border-radius:999px;background:#1D1D1F;color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em}
 .slots{display:flex;flex-direction:column;gap:10px}
 .slot{display:grid;grid-template-columns:110px 1fr;gap:20px;background:#fff;border-radius:22px;padding:24px 28px;transition:box-shadow .3s}
 .slot:hover{box-shadow:0 14px 40px -24px rgba(0,0,0,.25)}
@@ -212,6 +214,11 @@ section{padding:130px 0}
 .sp .role{font-size:15px;color:var(--tx2);margin-top:3px;line-height:1.35}
 .sp .ses{font-size:13px;color:var(--g700);font-weight:600;margin-top:8px}
 
+.sp-block+.sp-block{margin-top:72px}
+.sp-bh{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sp-bh small{font-size:13px;font-weight:600;color:var(--g700);letter-spacing:.04em;text-transform:uppercase}
+.sp-bh h3{font-size:26px;font-weight:700;letter-spacing:-.022em}
+.sp-bh i{font-style:normal;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#1D1D1F;color:#fff}
 .sp-more{margin-top:56px}
 .sp-more h3{font-size:15px;font-weight:600;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
 .sp-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px;border-top:1px solid var(--line)}
@@ -506,13 +513,9 @@ footer img{width:36px;border-radius:6px}
     </div></div>
 
     <div class="day on" id="d1">
-      <div class="dayhead"><h3>Governance, social event and welcome dinner</h3><span>Grand Hyatt Dubai</span></div>
-      <div class="slots">
-        <div class="slot"><div class="t">14:00<small>to 15:00</small></div><div><span class="badge g">Governance</span><span class="badge">Board members</span><h4>61st Board of Directors Meeting</h4><p>Al Khaleej Room, Grand Hyatt Dubai.</p></div></div>
-        <div class="slot"><div class="t">15:00<small>to 15:30</small></div><div><span class="badge g">Governance</span><span class="badge">All members</span><h4>17th Annual General Meeting</h4><p>Al Khaleej Room, Grand Hyatt Dubai.</p></div></div>
-        <div class="slot"><div class="t">16:00<small>to 17:30</small></div><div><span class="badge l">Social</span><span class="badge">All delegates</span><h4>Social event: AYA Universe</h4><p>Guided visit of the immersive art and technology venue at Wafi, Dubai.</p></div></div>
-        <div class="slot"><div class="t">19:00<small>onwards</small></div><div><span class="badge l">Social</span><span class="badge">All delegates</span><h4>Welcome Dinner & Networking</h4><p>Duck Garden, Grand Hyatt Dubai.</p></div></div>
-      </div>
+      <div class="dayhead"><h3>MoIAT workshop, governance, social event and welcome dinner</h3><span>Grand Hyatt Dubai</span></div>
+      <p class="invite">Morning workshop with the UAE Ministry of Industry and Advanced Technology (MoIAT), 09:30 to 12:30.</p>
+      <div class="slots" id="d1slots"></div>
     </div>
 
     <div class="day" id="d2">
@@ -532,7 +535,7 @@ footer img{width:36px;border-radius:6px}
       <p class="sub">Safety, operations and technology leaders from producers and suppliers across the region.</p>
     </div>
     <div class="filters" id="spf"></div>
-    <div class="sp-grid" id="spg"></div>
+    <div id="spg"></div>
     <div class="sp-more" id="spm"></div>
   </div>
 </section>
@@ -588,8 +591,8 @@ footer img{width:36px;border-radius:6px}
     </div>
     <div class="rooms reveal">
       <div class="room"><small>WED 25 NOV</small><b>Al Khaleej Room</b><span>Board 14:00 · AGM 15:00</span></div>
-      <div class="room"><small>WED 25 NOV</small><b>AYA Universe, Wafi</b><span>Social event · 16:00 to 17:30</span></div>
-      <div class="room"><small>WED 25 NOV</small><b>Duck Garden</b><span>Welcome dinner · 19:00</span></div>
+      <div class="room"><small>WED 25 NOV</small><b>AYA Universe, Wafi</b><span>Social event · 15:30 to 19:00</span></div>
+      <div class="room"><small>WED 25 NOV</small><b>Duck Garden</b><span>Welcome dinner · 20:00</span></div>
       <div class="room"><small>THU 26 NOV</small><b>Al Ameera Ballroom</b><span>Conference · registration 08:30</span></div>
     </div>
     <div class="partner reveal">
@@ -631,7 +634,7 @@ footer img{width:36px;border-radius:6px}
 <script>
 const REG="https://forms.cloud.microsoft/r/J57MYvbk9b";
 /* ---------- DATA (add "p":"img/speakers/name.jpg" to show a photo) ---------- */
-const SESS={mc:"Master of Ceremonies",open:"Opening",ai:"AI Panel",geo:"Crisis Panel",talk:"Presentations",close:"Closing"};
+const SESS={mc:"Master of Ceremonies",open:"Opening",ai:"AI Panel",geo:"Crisis Panel",talk:"Presentations",close:"Closing",ws:"MoIAT Workshop"};
 const SPK=[
  {n:"Ahmed Al Sayes",r:"MEGA Chairman · General Manager, Gases Division",c:"AHG",s:"open",t:"Opening Remarks by the MEGA Chairman",p:"img/speakers/sayes.jpg",bio:"A senior industry leader with more than 31 years in the gas sector, with deep expertise in strategic leadership, corporate governance, business growth and operational excellence. A Chemical Engineering graduate of California State University, Long Beach (1994), he pairs a strong technical foundation with decades of executive leadership, and is known for advancing sustainable growth, fostering innovation and building high-performing organisations."},
  {n:"Fahad Al Ansari",r:"MEGA Vice Chairman · CEO",c:"GASAL",s:"close",t:"Closing Remarks",p:"img/speakers/fahad.jpg",bio:"Fahad Ali Al Ansari joined GASAL as Chief Executive Officer in 2023, bringing more than three decades of expertise in Qatar’s energy sector across technical, commercial, marketing and executive roles. He previously held senior positions at QatarEnergy, RasGas and the Ministry of Electricity and Water, leading major capital projects while embedding quality, health, safety and environmental standards. He has served on the boards of leading petrochemical, industrial and energy organisations, holds a BSc in Civil Engineering and completed executive programmes at Harvard and INSEAD."},
@@ -652,10 +655,28 @@ const SPK=[
  {n:"Shivani Sivakumar",r:"Robotics Software Engineer",c:"Bear Robotics",s:"ai",t:"Robotics in Industrial Gases: From Traditional Automation to Physical AI",p:"img/speakers/shivani.jpg",bio:"Shivani is a Robotics Software Engineer at Bear Robotics, a Silicon Valley company building intelligent autonomous robots for hospitality, logistics and industry. She holds an MSc in Robotic Systems Development from Carnegie Mellon University. Her work spans perception, motion planning, control and AI-driven autonomy, with hands-on deployments in autonomous construction, warehousing and service robotics. She is passionate about field robotics and Physical AI, and in building reliable, safe autonomous systems that work seamlessly alongside people."},
  {n:"Ahmed Salem Hamdy",r:"QHSE, IMS & Industrial Risk Manager",c:"AHG",s:"talk",t:"Safety Culture",p:"img/speakers/hamdy.jpg",bio:"Ahmed Hamdy is a QHSE leader with an engineering background and an MBA, and 19 years in the industrial and medical gases sector across Egypt and Saudi Arabia. His expertise covers process risk assessment for new and existing facilities, gas production and filling, cryogenic systems, cylinder safety, hazardous materials, transport safety, fire protection and integrated management systems. As Leader of the MEGA Safety Workgroup (SAG), he supports regional collaboration on safety best practice, including proposed regulatory requirements for industrial and medical gas facilities in Saudi Arabia and a roadmap for wider cylinder governance."},
  {n:"Sulaiman Ummer Sahib",r:"City Planner and Technologist",c:"Informap Technology Center",s:"ai",t:"AI for Driver and Transport Safety",p:"img/speakers/sulaiman.jpg",bio:"Sulaiman Ummer Sahib is a city planner and technologist with 35 years of experience in geospatial technology and in developing solutions for GPS telematics, fleet management and smart cities. Since 2005 he has been Executive Director of Informap Technology Center in Sharjah, leading future technologies and application development, and he has managed process automation on large projects across Asia, the Middle East, Europe and Africa. His expertise covers GIS, addressing systems, accident management and driver safety. He holds a Master’s in City Planning from CEPT University, Ahmedabad, is an associate member of the Institute of Town Planners, India, and has co-authored three Springer books on e-governance, e-democracy and smart environments for smart cities."},
+ {n:"Sara Ahli",r:"Head of Technical Studies and Technical Databases",c:"MoIAT",s:"ws",t:"Legislation, Technical Requirements and Industrial Gas Standards",p:"img/speakers/sara.jpg",bio:"Sara Ahli is Head of Technical Studies and Technical Databases at the UAE Ministry of Industry and Advanced Technology. She has more than 10 years of experience in standardisation, technical regulations, regulatory affairs and quality infrastructure. Her work focuses on technical studies, regulatory impact assessment, standards development and evidence-based policymaking in support of regulatory effectiveness, product safety and industrial competitiveness. She also contributes to national and Gulf technical committees and to international standardisation initiatives."},
+ {n:"Fatima AlAli",r:"Industrial Engineer and Conformity Engineer",c:"MoIAT",s:"ws",t:"Conformity Assessment Requirements and Certification Procedures; Regulatory Requirements, Inspection and Oversight Mechanisms",p:"img/speakers/fatima.jpg",bio:"Fatima AlAli is an Industrial Engineer and Conformity Engineer at the UAE Ministry of Industry and Advanced Technology. She has experience in conformity assessment, technical regulations and regulatory compliance, with a focus on enhancing product quality and safety and supporting industrial development initiatives."},
+ {n:"Salha Alhashmi",c:"MoIAT",s:"ws",t:"Opening Remarks and Workshop Introduction",p:"img/speakers/salha.jpg"},
  {n:"Roger Sayah",r:"General Secretary",c:"MEGA",s:"open",t:"MEGA Updates and Association Highlights",p:"img/speakers/roger.jpg",bio:"Roger Sayah is an Electrical Engineering graduate of Université Saint-Joseph in Beirut, with more than 20 years in the industrial gases industry. He has held senior technical, operational and management roles with Air Liquide and Gulf Cryo across the Middle East and Europe, building deep expertise in industrial gas operations and regional business development. Since 2019 he has served as General Secretary of the Middle East Gases Association (MEGA), leading initiatives to advance safety, strengthen industry standards, support regulatory development and foster collaboration between industry and government authorities across the region."}
 ];
 const DEL=[["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["AHG"],["Air Liquide"],["Air Liquide"],["Air Liquide Global Helium"],["Air Liquide Global Helium"],["Air Liquide Global Helium"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["Air Products"],["AIT Events"],["AIT Events"],["Al Muftah International"],["Al Saeed Gas"],["Al-Mahia Transport"],["Alcan International"],["Alcan International"],["Alfa Laval"],["Baker Hughes"],["Bauer Kompressoren GCC"],["Bauer Kompressoren GCC"],["Bear Robotics"],["Bristol Gases"],["Bristol Gases"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Brothers Gas"],["Buzwair"],["Buzwair"],["Buzwair"],["Buzwair"],["Chart Industries"],["CIMC"],["CIMC"],["Concorde-Corodex Group"],["Concorde-Corodex Group"],["Cryo Gastech India"],["Cryocan"],["CryoSpec"],["Dosteen Engineering Solutions"],["ESSME Essential Systems & Services"],["ESSME Essential Systems & Services"],["Eurotainer"],["Eurotainer"],["Eurotainer"],["Fike Corporation"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["GASAL"],["Global Gas Services"],["Global Gas Services"],["Global Gases Group"],["Global Surf Digital"],["Glotech Trading"],["Greenox Gases & Chemicals"],["Greenox Gases & Chemicals"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Cryo"],["Gulf Helium Services"],["iGas Al Khobar"],["iGAS Technology Solutions"],["iGAS Technology Solutions"],["IGPH"],["IGPH"],["INOX India"],["International Trademark Association"],["Jacko Gases"],["Jacko Gases"],["Jalon (Thailand)"],["Jiangsu Xinde Intelligent Fluid Technology"],["Jiangsu Xinde Intelligent Fluid Technology"],["Jiangsu Xinde Intelligent Fluid Technology"],["Jiangsu Xinde Intelligent Fluid Technology"],["King Faisal Specialist Hospital & Research Centre"],["Linde"],["Linde"],["Linde"],["Linde"],["Linde"],["Linde"],["Linde"],["Luxfer Gas Cylinders (Cantrex)"],["Luxfer Gas Cylinders (Cantrex)"],["MEGA"],["MEGA"],["Ministry of Industry and Advanced Technology"],["Misfer Fahad Al Qahtani Contracting"],["Mysore Ammonia Envirotech"],["Mysore Ammonia Envirotech"],["Opsys"],["Prasanvi General Contracting"],["Prasanvi General Contracting"],["Prasanvi General Contracting"],["Prasanvi General Contracting"],["Rawabi Integrated Gas"],["Rawabi Integrated Gas"],["Rawabi Integrated Gas"],["Saih Al Rawl Gas"],["Saih Al Rawl Gas"],["Sichuan Air Separation Plant"],["Sichuan Air Separation Plant"],["Sichuan Zhijing Taibo Cryogenic Equipment"],["SinoCleansky"],["SOAL"],["SOAL"],["SOAL"],["Speciality Gas Company"],["Tekno Valves"],["Tekno Valves"],["Transafe Logistics"],["Transafe Logistics"],["Turbo-Tech Compressor Wuxi"],["Global Gases Group"],["MECSR"],["MECSR"],["Yateem Oxygen"],["Bluetech (Beijing)"],["Specialized Safety"],["Air Products"],["Air Products"],["Informap Technology Center"]];
 const TABLES=[["Al Mahia Transport","c4_almahia"],["Al Muftah International","c4_almuftah"],["Alcan International","c4_alcan"],["Alfa Laval Cherland (Fives Cryomec)","c4_alfalaval"],["Bauer Kompressoren GCC","c4_bauer"],["Cavagna Group","c4_cavagna"],["Chart Industries","c4_chart"],["CIGMA & AIT Events","c4_igchina"],["CIMC Enric","c4_cimc"],["Cryocan Basınçlı","c4_cryocan"],["EKC International","c4_ekc"],["Essential Systems & Services Middle East","c4_ess"],["Eurotainer","c4_eurotainer"],["Industrial Gas Projects House (IGPH)","c4_igph"],["INOX India","c4_inoxcva"],["Jiangsu Xinde Intelligent Fluid Technology","c4_xinde"],["Khalid Habalis Al-Otaibi Transportation","c4_khalidhabalis"],["Luxfer Gas Cylinders (Cantrex)","c4_luxfer"],["Misfer Group","c4_misfer"],["Mysore Ammonia Envirotech","c4_mysore"],["Prasanvi General Contracting","c4_prasanvi"],["Sichuan Air Separation Plant","c4_saspg"],["Tekno Valves North America","c4_tekno"],["Transafe Logistics","c4_transafe"],["Turbo-Tech Compressor Wuxi","c4_turbotech"]];
+const D1=[
+ {t:"09:30",e:"to 10:00",k:"brk",h:"Registration, coffee & networking (MoIAT workshop)"},
+ {t:"10:00",e:"to 10:10",b:["d","MoIAT Workshop"],inv:1,h:"Opening Remarks and Workshop Introduction",sp:["Salha Alhashmi"]},
+ {t:"10:10",e:"to 10:30",b:["d","MoIAT Workshop"],inv:1,h:"Legislation, Technical Requirements and Industrial Gas Standards",p:"MoIAT Standards Department.",sp:["Sara Ahli"]},
+ {t:"10:30",e:"to 10:50",b:["d","MoIAT Workshop"],inv:1,h:"Conformity Assessment Requirements and Certification Procedures",p:"MoIAT Conformity Department.",sp:["Fatima AlAli"]},
+ {t:"10:50",e:"to 11:10",b:["d","MoIAT Workshop"],inv:1,h:"Regulatory Requirements, Inspection and Oversight Mechanisms",p:"MoIAT Regulatory Department.",sp:["Fatima AlAli"]},
+ {t:"11:10",e:"to 11:40",b:["d","MoIAT Workshop"],inv:1,h:"Introduction to MEGA",sp:["Roger Sayah"]},
+ {t:"11:40",e:"to 12:00",b:["d","MoIAT Workshop"],inv:1,h:"Government Entities: Roles, Responsibilities and Requirements",p:"Speakers from the relevant government entities to be confirmed."},
+ {t:"12:00",e:"to 12:30",b:["d","MoIAT Workshop"],inv:1,h:"Questions, Answers and Open Discussion",p:"With all presenters.",sp:["Sara Ahli","Fatima AlAli","Salha Alhashmi","Roger Sayah"]},
+ {t:"12:30",e:"to 13:30",k:"brk",h:"Lunch"},
+ {t:"14:00",e:"to 15:00",b:["g","Governance"],tag:"Board members",h:"61st Board of Directors Meeting",p:"Al Khaleej Room, Grand Hyatt Dubai."},
+ {t:"15:00",e:"to 15:30",b:["g","Governance"],tag:"All members",h:"17th Annual General Meeting",p:"Al Khaleej Room, Grand Hyatt Dubai."},
+ {t:"15:30",e:"to 19:00",b:["l","Social"],tag:"All delegates",h:"Social event: AYA Universe",p:"Guided visit of the immersive art and technology venue at Wafi, Dubai. Dedicated shuttle from Grand Hyatt Dubai: first departure 15:30, last return from AYA Universe 19:00."},
+ {t:"20:00",e:"onwards",b:["l","Social"],tag:"All delegates",h:"Welcome Dinner & Networking",p:"Duck Garden, Grand Hyatt Dubai."}
+];
 const D2=[
  {t:"08:30",e:"to 09:00",k:"brk",h:"Delegate registration & badge collection"},
  {t:"09:00",e:"to 09:05",b:["g", "Welcome"],h:"Welcome by the Master of Ceremonies",p:"Welcome and housekeeping.",sp:["Roxana Saade"]},
@@ -739,26 +760,36 @@ addEventListener("load",()=>setDay(seg.querySelector(".on").dataset.day));addEve
 const av=(s,cls)=>s.p?`<img src="${esc(s.p)}" alt="" loading="lazy">`:"";
 const who=n=>{const i=spIdx[n],s=SPK[i];return `<button data-sp="${i}"><span class="mini">${s.p?av(s):ini(n)}</span>${esc(n)} <em>${esc(s.c)}</em>${s.m?`<i class="mod">Moderator</i>`:""}</button>`};
 
+const slotHTML=x=>`<div class="slot ${x.k||""}"><div class="t">${x.t}${x.e?`<small>${x.e}</small>`:""}</div><div>${x.b?`<span class="badge ${x.b[0]}">${x.b[1]}</span>`:""}${x.inv?`<span class="badge">By invitation only</span>`:""}${x.tag?`<span class="badge">${esc(x.tag)}</span>`:""}<h4>${esc(x.h)}</h4>${x.p?`<p>${esc(x.p)}</p>`:""}${x.sp?`<div class="who">${x.sp.map(who).join("")}</div>`:""}</div></div>`;
+$("#d1slots").innerHTML=D1.map(slotHTML).join("");
 $("#d2slots").innerHTML=D2.map(x=>`<div class="slot ${x.k||""}"><div class="t">${x.t}${x.e?`<small>${x.e}</small>`:""}</div><div>${x.b?`<span class="badge ${x.b[0]}">${x.b[1]}</span>`:""}<h4>${esc(x.h)}</h4>${x.p?`<p>${esc(x.p)}</p>`:""}${x.sp?`<div class="who">${x.sp.map(who).join("")}</div>`:""}</div></div>`).join("");
 
 /* speakers */
 const phWaves=`<svg class="waves" viewBox="0 0 200 250" preserveAspectRatio="none"><g fill="none" stroke="#fff" stroke-width=".7">${wavePaths(200,250,18,30,1)}</g></svg>`;
 function photo(s){return `<div class="ph">${s.p?`<img src="${esc(s.p)}" alt="${esc(s.n)}" loading="lazy">`:`${phWaves}<div class="mono">${ini(s.n)}</div>`}<span class="co">${esc(s.c)}</span></div>`}
+const WS=[],WST={};D1.forEach(x=>{if(!x.b||x.b[1]!=="MoIAT Workshop"||x.h.startsWith("Questions"))return;(x.sp||[]).forEach(n=>{if(!WST[n]){WS.push(n);WST[n]=x.h}else WST[n]+=" · "+x.h})});
 let spF="all";
 function renderSp(){
  $("#spf").innerHTML=[["all","All"],...Object.entries(SESS)].map(([k,l])=>`<button class="${spF===k?"on":""}" data-f="${k}">${l}</button>`).join("");
- const L=SPK.map((s,i)=>({s,i})).filter(o=>spF==="all"||o.s.s===spF);
- $("#spg").innerHTML=L.filter(o=>o.s.p).map(({s,i})=>`<button class="sp" data-sp="${i}">${photo(s)}<h4>${esc(s.n)}</h4><div class="role">${esc(s.r||s.c)}</div><div class="ses">${s.s==="talk"?esc(s.t):SESS[s.s]}${s.m?" · Moderator":""}</div></button>`).join("");
- const R=L.filter(o=>!o.s.p);
- $("#spm").innerHTML=R.length?`<h3>${L.some(o=>o.s.p)?"Also speaking":"Speakers"}</h3><div class="sp-list">${R.map(({s,i})=>`<button class="sp-row" data-sp="${i}"><b>${esc(s.n)}</b><span>${esc([s.r,s.c].filter(Boolean).join(", "))}</span><em>${s.s==="talk"?esc(s.t):SESS[s.s]}${s.m?" · Moderator":""}</em></button>`).join("")}</div>`:""}
+ const card=(s,i,lab)=>`<button class="sp" data-sp="${i}">${photo(s)}<h4>${esc(s.n)}</h4><div class="role">${esc(s.r||s.c)}</div><div class="ses">${esc(lab)}</div></button>`;
+ const lab2=s=>(s.s==="talk"?s.t:SESS[s.s])+(s.m?" · Moderator":"");
+ const head=(d,t,inv)=>`<div class="sp-bh"><small>${d}</small><h3>${t}</h3>${inv?"<i>By invitation only</i>":""}</div>`;
+ const grid=(L,lab)=>`<div class="sp-grid">${L.filter(o=>o.s.p).map(({s,i})=>card(s,i,lab(s))).join("")}</div>`+(L.some(o=>!o.s.p)?`<div class="sp-more"><h3>Also speaking</h3><div class="sp-list">${L.filter(o=>!o.s.p).map(({s,i})=>`<button class="sp-row" data-sp="${i}"><b>${esc(s.n)}</b><span>${esc([s.r,s.c].filter(Boolean).join(", "))}</span><em>${esc(lab(s))}</em></button>`).join("")}</div></div>`:"");
+ const B1=WS.map(n=>({s:SPK[spIdx[n]],i:spIdx[n]}));
+ const B2=SPK.map((s,i)=>({s,i})).filter(o=>o.s.s!=="ws"&&(spF==="all"||o.s.s===spF));
+ let h="";
+ if(spF==="all"||spF==="ws")h+=`<div class="sp-block">${head("Wed 25 Nov · Morning","MoIAT Workshop",1)}${grid(B1,s=>WST[s.n])}</div>`;
+ if(spF!=="ws"&&B2.length)h+=`<div class="sp-block">${spF==="all"?head("Thu 26 Nov","Conference"):""}${grid(B2,lab2)}</div>`;
+ $("#spg").innerHTML=h;
+ $("#spm").innerHTML=""}
 renderSp();
 $("#spf").onclick=e=>{const b=e.target.closest("button");if(b){spF=b.dataset.f;renderSp()}};
 
 /* sheet */
-const SLOT={};D2.forEach(x=>(x.sp||[]).forEach(n=>SLOT[n]=x.t+" "+x.e));
+const SLOT={};[["Wed 25 Nov",D1],["Thu 26 Nov",D2]].forEach(([d,A])=>A.forEach(x=>{if(x.h.startsWith("Questions"))return;(x.sp||[]).forEach(n=>{(SLOT[n]=SLOT[n]||{})[d]=(SLOT[n][d]?SLOT[n][d]+", ":"")+x.t+" "+x.e})}));
 function openSp(i){const s=SPK[i];
  $("#sbox").innerHTML=`${photo(s)}<div class="sinfo"><button class="x" aria-label="Close">×</button><h3>${esc(s.n)}</h3><div class="role">${esc([s.r,s.c].filter(Boolean).join(" · "))}</div>
- <dl><dt>Session</dt><dd>${SESS[s.s]}${s.m?" (Moderator)":""} · ${s.s==="ws"?"Wed 25 Nov":"Thu 26 Nov"}${SLOT[s.n]?" · "+SLOT[s.n]:""}</dd><dt>Talk</dt><dd>${esc(s.t)}</dd><dt>About</dt><dd style="color:var(--tx2)">${s.bio?esc(s.bio):"Biography coming soon."}</dd></dl></div>`;
+ <dl><dt>Session</dt><dd>${SESS[s.s]}${s.m?" (Moderator)":""}${SLOT[s.n]?Object.entries(SLOT[s.n]).map(([d,t])=>"<br>"+d+" · "+t).join(""):" · "+(s.s==="ws"?"Wed 25 Nov":"Thu 26 Nov")}</dd><dt>Talk</dt><dd>${esc(s.t)}</dd><dt>About</dt><dd style="color:var(--tx2)">${s.bio?esc(s.bio):"Biography coming soon."}</dd></dl></div>`;
  $("#sheet").classList.add("on")}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-sp]");if(b){openSp(+b.dataset.sp);return}
  if(e.target.id==="sheet"||e.target.closest(".x"))$("#sheet").classList.remove("on")});
