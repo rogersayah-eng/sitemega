@@ -305,7 +305,7 @@ a.vcard.hl1:hover{background:linear-gradient(150deg,var(--g600),var(--g900))}
 .vcard.hl1 p{color:rgba(255,255,255,.75)}
 .vcard.hl1 .ic{background:rgba(255,255,255,.14);color:var(--lime)}
 .vcard.hl1 .go{color:var(--lime)}
-.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
 .partner{margin-top:56px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;padding:32px 28px;border-radius:var(--r);background:var(--bg2)}
 .partner small{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:4px}
 .partner b{font-size:19px;letter-spacing:-.02em}
@@ -591,10 +591,12 @@ footer img{width:36px;border-radius:6px}
         <h4>The hotel</h4><p>Facilities, dining and services.</p><span class="go">Visit hyatt.com ›</span></a>
     </div>
     <div class="rooms reveal">
-      <div class="room"><small>WED 25 NOV</small><b>Al Khaleej Room</b><span>Board 14:00 · AGM 15:00</span></div>
+      <div class="room"><small>WED 25 NOV</small><b>Al Wasl Ballroom</b><span>Board meeting · 14:00</span></div>
+      <div class="room"><small>WED 25 NOV</small><b>Al Khaleej Room</b><span>AGM · 15:00</span></div>
       <div class="room"><small>WED 25 NOV</small><b>AYA Universe, Wafi</b><span>Social event · 15:30 to 19:00</span></div>
       <div class="room"><small>WED 25 NOV</small><b>Duck Garden</b><span>Welcome dinner · 20:00</span></div>
       <div class="room"><small>THU 26 NOV</small><b>Al Ameera Ballroom</b><span>Conference · registration 08:30</span></div>
+      <div class="room"><small>THU 26 NOV</small><b>Al Ameera</b><span>Dinner (optional) · 20:00</span></div>
     </div>
     <div class="partner reveal">
       <div><small>Destination partner</small><b>Supported by Dubai Business Events</b></div>
@@ -673,7 +675,7 @@ const D1=[
  {t:"11:10",e:"to 12:00",b:["d","MoIAT Workshop"],inv:1,h:"Introduction to MEGA",sp:["Roger Sayah"]},
  {t:"12:00",e:"to 12:30",b:["d","MoIAT Workshop"],inv:1,h:"Questions, Answers and Open Discussion",p:"With all presenters.",sp:["Sara Ahli","Fatima AlAli","Salha Alhashmi","Roger Sayah"]},
  {t:"12:30",e:"to 13:30",k:"brk",h:"Lunch"},
- {t:"14:00",e:"to 15:00",b:["g","Governance"],tag:"Board members",h:"61st Board of Directors Meeting",p:"Al Khaleej Room, Grand Hyatt Dubai."},
+ {t:"14:00",e:"to 15:00",b:["g","Governance"],tag:"Board members",h:"61st Board of Directors Meeting",p:"Al Wasl Ballroom, Grand Hyatt Dubai."},
  {t:"15:00",e:"to 15:30",b:["g","Governance"],tag:"All members",h:"17th Annual General Meeting",p:"Al Khaleej Room, Grand Hyatt Dubai."},
  {t:"15:30",e:"to 19:00",b:["l","Social"],tag:"All delegates",h:"Social event: AYA Universe",p:"Guided visit of the immersive art and technology venue at Wafi, Dubai. Dedicated shuttle from Grand Hyatt Dubai: first departure 15:30, last return from AYA Universe 19:00."},
  {t:"20:00",e:"onwards",b:["l","Social"],tag:"All delegates",h:"Welcome Dinner & Networking",p:"Duck Garden, Grand Hyatt Dubai."}
@@ -697,7 +699,7 @@ const D2=[
  {t:"15:50",e:"to 16:00",b:["g", "Closing"],h:"Closing Remarks",p:"By the MEGA Vice Chairman.",sp:["Fahad Al Ansari"]},
  {t:"16:00",e:"to 16:20",b:["d", "Ceremony"],h:"MEGA Awards & Group Photo",p:"Recognising the members and people who moved safety forward this year, followed by the group photo."},
  {t:"16:20",e:"to 18:00",b:["l", "Networking"],h:"Networking Tables",p:"Meet MEGA Category 4 members at the networking tables."},
- {t:"20:00",e:"onwards",b:["l", "Social"],h:"Dinner & Networking (optional)",p:"Venue and arrangements to be confirmed."}
+ {t:"20:00",e:"onwards",b:["l", "Social"],h:"Dinner & Networking (optional)",p:"Al Ameera, Grand Hyatt Dubai."}
 ];
 
 const MEM=[["Category 1 & 2", [["c12_ahg", "Abdullah Hashim Industrial Gases (AHG)"], ["c12_airliquide", "Air Liquide Middle East & North Africa"], ["c12_airproducts", "Air Products Middle East"], ["c12_alaalamiya", "Al-Aalamiya"], ["c12_brothers", "Brothers Gas"], ["c12_buzwair", "Buzwair Industrial Gases"], ["c12_gasal", "GASAL"], ["c12_gulfcryo", "Gulf Cryo"], ["c12_linde", "Linde Gas Middle East"], ["c12_prime", "Prime Co"], ["c12_rawabi", "Rawabi Integrated Gas"], ["c12_sabic", "SABIC"], ["c12_soal", "SOAL"], ["c12_technogas", "Techno Gas"]]], ["Category 3", [["c3_alglobalhelium", "Air Liquide Global Helium"], ["c3_alqassim", "Al Qassim Oxygen Company"], ["c3_alsaeed", "Al-Saeed Gases"], ["c3_arabiagas", "Arabia Gas"], ["c3_bristol", "Bristol Gases"], ["c3_cryospec", "CryoSpec"], ["c3_digas", "DIGAS"], ["c3_gazbihooshi", "Gaz Bihooshi Shomal"], ["c3_globalgas", "Global Gas Services"], ["c3_glotech", "Glo-Tech Trading"], ["c3_greenox", "Greenox Gases"], ["c3_gulfhelium", "Gulf Helium Services"], ["c3_igas", "iGas Al Khobar"], ["c3_jacko", "Jacko Gases"], ["c3_kocerler", "Koçerler Group"], ["c3_manav", "Manav Gases"], ["c3_nuras", "Nuras Al-Sharq"], ["c3_roham", "Roham Industrial Gases"], ["c3_saihalrawl", "Saih Al-Rawl Gas"], ["c3_specialty", "Specialty Gases Co."], ["c4_sohar", "Sohar Gases"], ["c3_snr", "Syrian Natural Resources"], ["c3_wosta", "Wosta Gases"]]], ["Category 4", [["c4_almahia", "Al Mahia Transport"], ["c4_almuftah", "Al Muftah International"], ["c4_alcan", "Al-Can International"], ["c4_alfalaval", "Alfa Laval"], ["c4_bauer", "BAUER Kompressoren GCC"], ["c4_brightway", "Brightway Cryogenic"], ["c4_cavagna", "Cavagna Group"], ["c4_chart", "Chart Industries"], ["c4_cimc", "CIMC Enric"], ["c4_cryocan", "Cryocan"], ["c4_cryostar", "Cryostar"], ["c4_dalian", "Dalian Specialty Gases"], ["c4_doer", "DOER Cryo Equipment"], ["c4_ekc", "EKC International"], ["c4_ess", "Essential Systems & Services"], ["c4_eurotainer", "Eurotainer"], ["c4_gasecosphere", "Gas Ecosphere"], ["c4_gasmax", "GasMax Energy"], ["c4_igchina", "IG China (CIGMA & AIT Events)"], ["c4_igph", "Industrial Gas Projects House (IGPH)"], ["c4_inoxcva", "INOXCVA"], ["c4_khalidhabalis", "Khalid Habalis Al-Otaibi for Transportation"], ["c4_lifeguard", "LifeGuard Technologies"], ["c4_luxfer", "Luxfer Gas Cylinders"], ["c4_misfer", "Misfer Group"], ["c4_mysore", "Mysore Ammonia"], ["c4_nac", "NAC"], ["c4_netcylinders", "NET Cylinders"], ["c4_prasanvi", "Prasanvi"], ["c4_rexarc", "Rexarc"], ["c4_saspg", "SASPG"], ["c4_tekno", "Tekno Valves"], ["c4_thinkto", "Think-To"], ["c4_transafe", "Transafe"], ["c4_turbotech", "Turbo-Tech"], ["c4_unieco", "UniEco"], ["c4_xinde", "XINDE"]]]];
